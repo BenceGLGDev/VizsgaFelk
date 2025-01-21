@@ -1,0 +1,110 @@
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kurzus - Tuple és Szótárak</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Python Kurzus</h1>
+        <p>Tanulj meg programozni a Python nyelv alapjaitól a haladó szintig!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Pythonba</a></li>
+                    <li><a href="chapter2.html">Adatbevitel</a></li>
+                    <li><a href="chapter3.html">Ciklusok</a></li>
+                    <li><a href="chapter4.html">Boolean és Listák</a></li>
+                    <li><a href="chapter5.html">Random Modul</a></li>
+                    <li><a href="chapter6.html">Sztring Metódusok</a></li>
+                    <li><a href="chapter7.html" class="active">Tuple és Szótárak</a></li>
+                    <li><a href="chapter8.html">Függvények és Eljárások</a></li>
+                    <li><a href="chapter9.html">Fájlkezelés</a></li>
+                    <li><a href="chapter10.html">Objektumorientált Programozás</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>7. Tuple és Szótárak</h2>
+
+                <h3>Tuple adattípus</h3>
+                <p>A tuple egy olyan adattípus, amely több értéket képes egyszerre tárolni. Jellemzői:</p>
+                <ul>
+                    <li>Nem módosítható (immutable).</li>
+                    <li>A tuple elemeinek sorrendje rögzített.</li>
+                    <li>Indexelés segítségével érhetők el az elemek.</li>
+                </ul>
+                <pre><code>my_tuple = ("alma", "körte", "barack")
+print(my_tuple[0])  # alma</code></pre>
+
+                <h3>Tuple metódusai</h3>
+                <ul>
+                    <li><code>index()</code>: Megkeresi egy érték első előfordulási indexét.</li>
+                    <li><code>count()</code>: Megszámolja, hogy hányszor fordul elő egy adott érték.</li>
+                </ul>
+                <pre><code>my_tuple = ("alma", "körte", "alma")
+print(my_tuple.count("alma"))  # 2
+print(my_tuple.index("körte"))  # 1</code></pre>
+
+                <h3>Dictionary (Szótár)</h3>
+                <p>A dictionary kulcs-érték párokat tartalmazó adatszerkezet. Jellemzői:</p>
+                <ul>
+                    <li>Indexek helyett kulcsokat használ.</li>
+                    <li>A kulcsok egyediek (nincs duplikáció).</li>
+                    <li>A kulcsok és az értékek bármilyen adattípusúak lehetnek.</li>
+                </ul>
+                <pre><code>my_dict = {
+    "nev": "Anna",
+    "kor": 25,
+    "varos": "Budapest"
+}
+print(my_dict["nev"])  # Anna</code></pre>
+
+                <h3>Szótár metódusai</h3>
+                <ul>
+                    <li><code>keys()</code>: A szótár kulcsait adja vissza.</li>
+                    <li><code>values()</code>: A szótár értékeit adja vissza.</li>
+                    <li><code>items()</code>: A kulcs-érték párokat adja vissza.</li>
+                    <li><code>pop()</code>: Egy elem törlése a kulcs alapján.</li>
+                    <li><code>update()</code>: Új kulcs-érték párokat ad a szótárhoz.</li>
+                </ul>
+                <pre><code># Kulcsok lekérése
+print(my_dict.keys())
+
+# Értékek lekérése
+print(my_dict.values())
+
+# Kulcs-érték párok iterálása
+for kulcs, ertek in my_dict.items():
+    print(f"{kulcs}: {ertek}")</code></pre>
+
+                <h3>Szótár bővítése és törlése</h3>
+                <p>Új kulcs-érték pár hozzáadása vagy meglévő elem törlése:</p>
+                <pre><code># Új kulcs-érték pár hozzáadása
+my_dict["orszag"] = "Magyarország"
+
+# Elem törlése
+my_dict.pop("kor")
+print(my_dict)</code></pre>
+
+                <h3>Feladat</h3>
+                <ul>
+                    <li>Melyik metódussal lehet másolni egy szótárt?</li>
+                    <li>Melyik metódussal lehet törölni a teljes szótárat?</li>
+                </ul>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Python Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
+<script src="script.js"></script>

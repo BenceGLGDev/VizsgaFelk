@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kurzus - Függvények és Eljárások</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Python Kurzus</h1>
+        <p>Tanulj meg programozni a Python nyelv alapjaitól a haladó szintig!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Pythonba</a></li>
+                    <li><a href="chapter2.html">Adatbevitel</a></li>
+                    <li><a href="chapter3.html">Ciklusok</a></li>
+                    <li><a href="chapter4.html">Boolean és Listák</a></li>
+                    <li><a href="chapter5.html">Random Modul</a></li>
+                    <li><a href="chapter6.html">Sztring Metódusok</a></li>
+                    <li><a href="chapter7.html">Tuple és Szótárak</a></li>
+                    <li><a href="chapter8.html" class="active">Függvények és Eljárások</a></li>
+                    <li><a href="chapter9.html">Fájlkezelés</a></li>
+                    <li><a href="chapter10.html">Objektumorientált Programozás</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>8. Függvények és Eljárások</h2>
+
+                <h3>Függvények és eljárások fogalma</h3>
+                <p>A Pythonban bármikor készíthetünk saját függvényeket, amelyek megkönnyítik a programozási folyamatokat. Függvényt a <code>def</code> kulcsszóval készítünk.</p>
+                <ul>
+                    <li><strong>Függvény:</strong> Ha van visszatérési értéke (<code>return</code>).</li>
+                    <li><strong>Eljárás:</strong> Ha nincs visszatérési értéke (csak végrehajt valamit).</li>
+                </ul>
+                <pre><code>def koszont():
+    print("Üdv a Python kurzuson!")</code></pre>
+
+                <h3>Paraméterek átadása</h3>
+                <p>A függvények paramétereket fogadhatnak, amelyeket változóként használhatunk a függvényen belül. A paramétereket vesszővel választjuk el.</p>
+                <pre><code>def osszeadas(a, b):
+    return a + b
+
+print(osszeadas(3, 5))  # 8</code></pre>
+
+                <h4>Default értékek</h4>
+                <p>A paramétereknek alapértelmezett értékeket is megadhatunk, amelyek akkor érvényesek, ha a függvényt ezen paraméter nélkül hívjuk meg:</p>
+                <pre><code>def koszont(nev="Vendég"):
+    print(f"Üdv, {nev}!")
+
+koszont()  # Üdv, Vendég!
+koszont("Anna")  # Üdv, Anna!</code></pre>
+
+                <h3>Ismeretlen paraméterszám</h3>
+                <p>Ha nem tudjuk előre, hogy hány paramétert fogad a függvény, a következő megoldásokat használhatjuk:</p>
+                <h4>*args</h4>
+                <p>A <code>*args</code> (jelen esetben "szamok") használatával tetszőleges számú paramétert adhatunk meg listaként:</p>
+                <pre><code>def osszeg(*szamok):
+    return sum(szamok)
+
+print(osszeg(1, 2, 3, 4))  # 10</code></pre>
+
+                <h4>**kwargs</h4>
+                <p>A <code>**kwargs</code> (jelen esetben "adatok") segítségével tetszőleges számú kulcs-érték párt adhatunk meg:</p>
+                <pre><code>def info(**adatok):
+    for kulcs, ertek in adatok.items():
+        print(f"{kulcs}: {ertek}")
+
+info(nev="Anna", kor=25, varos="Budapest")</code></pre>
+
+                <h3>Visszatérési érték</h3>
+                <p>A függvény visszatérési értéke a <code>return</code> kulcsszóval adható meg:</p>
+                <pre><code>def negyzet(x):
+    return x ** 2
+
+print(negyzet(4))  # 16</code></pre>
+
+                <h3>Rekurzió</h3>
+                <p>Rekurzió esetén egy függvény önmagát hívja meg egy adott feltételig. Példa:</p>
+                <pre><code>def faktorialis(n):
+    if n == 1:
+        return 1
+    else:
+        return n * faktorialis(n - 1)
+
+print(faktorialis(4))  # 24</code></pre>
+                <p><strong>Fontos:</strong> Óvatosan kell használni a rekurziót, mivel könnyen végtelen ciklust vagy túlzott memóriahasználatot eredményezhet!</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Python Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
+<script src="script.js"></script>

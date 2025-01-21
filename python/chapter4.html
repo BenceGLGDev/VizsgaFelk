@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kurzus - Boolean és Listák</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Python Kurzus</h1>
+        <p>Tanulj meg programozni a Python nyelv alapjaitól a haladó szintig!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Pythonba</a></li>
+                    <li><a href="chapter2.html">Adatbevitel</a></li>
+                    <li><a href="chapter3.html">Ciklusok</a></li>
+                    <li><a href="chapter4.html" class="active">Boolean és Listák</a></li>
+                    <li><a href="chapter5.html">Random Modul</a></li>
+                    <li><a href="chapter6.html">Sztring Metódusok</a></li>
+                    <li><a href="chapter7.html">Tuple és Szótárak</a></li>
+                    <li><a href="chapter8.html">Függvények és Eljárások</a></li>
+                    <li><a href="chapter9.html">Fájlkezelés</a></li>
+                    <li><a href="chapter10.html">Objektumorientált Programozás</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>4. Boolean és Listák</h2>
+
+                <h3>Boolean változó típus</h3>
+                <p>A <code>bool</code> típusú változó két értéket vehet fel: <code>True</code> (igaz) vagy <code>False</code> (hamis).</p>
+                <p>Típuskényszerítés például:</p>
+                <pre><code>valtozo = bool(1)  # True
+valtozo2 = bool(0)  # False</code></pre>
+
+                <h3>Listák</h3>
+                <p>A lista egy olyan változó, amelyben több értéket tárolhatunk egyszerre. A lista szögletes zárójelek között van definiálva.</p>
+                <pre><code>gyumolcsok = ["alma", "körte", "barack"]</code></pre>
+
+                <h3>Indexelés</h3>
+                <p>A listában lévő elemek indexelése mindig 0-tól kezdődik:</p>
+                <pre><code>print(gyumolcsok[0])  # alma</code></pre>
+
+                <h3>Érték módosítása</h3>
+                <p>A lista elemei módosíthatók az indexük alapján:</p>
+                <pre><code>gyumolcsok[1] = "szilva"
+print(gyumolcsok)  # ["alma", "szilva", "barack"]</code></pre>
+
+                <h3>A <code>len()</code> függvény</h3>
+                <p>A <code>len()</code> függvény visszaadja a lista elemeinek számát:</p>
+                <pre><code>print(len(gyumolcsok))  # 3</code></pre>
+
+                <h3>Elem hozzáadása</h3>
+                <p>Új elemeket adhatunk hozzá a <code>lista.append()</code> vagy <code>lista.insert()</code> metódusokkal:</p>
+                <pre><code># Hozzáadás a lista végéhez
+lista.append("szőlő")
+
+# Hozzáadás meghatározott indexhez
+lista.insert(1, "kompót")</code></pre>
+
+                <h3>Elem törlése</h3>
+                <p>Törlés index alapján vagy érték szerint:</p>
+                <pre><code># Törlés érték szerint
+lista.remove("alma")
+
+# Törlés index szerint
+del lista[0]</code></pre>
+
+                <h3>Lista és ciklus</h3>
+                <p>Bejárhatjuk a lista elemeit egy <code>for</code> ciklussal:</p>
+                <pre><code>for gyumolcs in gyumolcsok:
+    print(gyumolcs)</code></pre>
+
+                <h3>Lista ellenőrzése</h3>
+                <p>Ellenőrizhetjük, hogy egy elem szerepel-e a listában:</p>
+                <pre><code>if "alma" in gyumolcsok:
+    print("Az alma benne van a listában.")</code></pre>
+
+                <h3>Minimális és maximális érték</h3>
+                <p>A <code>min()</code> és <code>max()</code> függvényekkel lekérhetjük a legkisebb és legnagyobb értéket:</p>
+                <pre><code>szamok = [3, 5, 1, 8]
+print(min(szamok))  # 1
+print(max(szamok))  # 8</code></pre>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Python Kurzus. Minden jog fenntartva.</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,151 @@
+/* General Styles */
+body {
+    font-family: 'Segoe UI', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #ffe6d5;
+    color: #4d3e3e;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    margin: 0;
+}
+
+header {
+    background-color: #d9a58b;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header p {
+    font-size: 1.2em;
+    margin-top: 10px;
+}
+
+main {
+    display: flex;
+    flex: 1;
+}
+
+/* Sidebar Styles */
+.sidebar {
+    background-color: #4d3e3e;
+    color: white;
+    width: 250px;
+    padding: 20px;
+    box-shadow: 2px 0 6px rgba(0, 0, 0, 0.2);
+    position: sticky;
+    top: 0;
+    height: 100vh;
+    transition: transform 0.3s ease;
+}
+
+.sidebar.hidden {
+    transform: translateX(-100%);
+}
+
+.sidebar nav ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar nav ul li {
+    margin: 15px 0;
+}
+
+.sidebar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    display: block;
+    padding: 12px;
+    border-radius: 10px;
+    transition: all 0.3s ease-in-out;
+}
+
+.sidebar nav ul li a:hover, .sidebar nav ul li a.active {
+    background-color: #d9a58b;
+    transform: scale(1.05);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+/* Content Area Styles */
+.content {
+    flex: 1;
+    padding: 20px;
+    overflow-y: auto;
+}
+
+.chapter {
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    margin-bottom: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.chapter:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+/* Hamburger Menu Button */
+.hamburger {
+    display: none;
+    background-color: #d9a58b;
+    color: white;
+    border: none;
+    font-size: 20px;
+    padding: 10px;
+    border-radius: 5px;
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.hamburger:hover {
+    background-color: #b3614b;
+}
+
+/* Footer */
+footer {
+    background-color: #4d3e3e;
+    color: white;
+    text-align: center;
+    padding: 10px 0;
+    font-size: 0.9em;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100vh;
+        z-index: 999;
+        transform: translateX(-100%);
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .content {
+        padding: 10px;
+    }
+}
