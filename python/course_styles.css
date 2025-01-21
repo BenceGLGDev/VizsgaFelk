@@ -133,6 +133,7 @@ button:hover, a:hover {
     transform: scale(1.05);
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
+
 .subtitle-with-logo {
     display: flex;
     align-items: center;
@@ -143,6 +144,7 @@ button:hover, a:hover {
     width: 50px;
     height: auto;
 }
+
 pre code {
     background-color: #333;
     border: 1px solid #ddd;
@@ -153,6 +155,54 @@ pre code {
     font-family: 'Courier New', Courier, monospace;
     color: #ddd;
 }
+
 code {
     font-weight: bold;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+    main {
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding: 10px;
+        box-shadow: none;
+    }
+
+    .sidebar nav ul li {
+        margin: 10px 0;
+    }
+
+    .content {
+        padding: 10px;
+    }
+
+    .chapter {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 15px 0;
+    }
+
+    header p {
+        font-size: 1em;
+    }
+
+    .sidebar nav ul li a {
+        font-size: 0.9em;
+        padding: 10px;
+    }
+
+    button, a {
+        font-size: 0.9em;
+        padding: 8px 15px;
+    }
 }
