@@ -28,6 +28,12 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
             flex: 1;
         }
+
+        @media screen and (max-width: 768px) {
+            .chapter {
+                display: none;
+            }
+        }
     </style>
 </head>
 <body>
@@ -56,6 +62,7 @@
         </aside>
 
         <section class="content">
+            <article class="chapter">
                 <!-- Main Title with Python Logo -->
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <h2>1. Bevezetés a Pythonba</h2>
@@ -135,6 +142,7 @@
                         <li>Írd ki a világ legjobb programozási nyelvét!</li>
                     </ol>
                 </div>
+            </article>
         </section>
     </main>
 
