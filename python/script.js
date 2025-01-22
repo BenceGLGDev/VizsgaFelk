@@ -6,3 +6,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sidebar.classList.toggle('hidden');
     });
 });
+hamburger.addEventListener('click', () => {
+    console.log('Hamburger menu clicked');
+    sidebar.classList.toggle('hidden');
+});
