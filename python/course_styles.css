@@ -51,6 +51,12 @@ button.hamburger {
 
 .sidebar.hidden {
     transform: translateX(-100%);
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100%;
+    z-index: 1000;
+    transition: transform 0.3s ease;
 }
 
 /* Ensure visibility on PC */
