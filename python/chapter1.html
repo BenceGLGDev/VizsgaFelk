@@ -21,19 +21,6 @@
             background-color: #d9a58b;
             color: white;
         }
-        .content {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-            flex: 1;
-        }
-
-        @media screen and (max-width: 768px) {
-            .chapter {
-                display: none;
-            }
-        }
     </style>
 </head>
 <body>
@@ -62,7 +49,6 @@
         </aside>
 
         <section class="content">
-            <article class="chapter">
                 <!-- Main Title with Python Logo -->
                 <div style="display: flex; align-items: center; gap: 15px;">
                     <h2>1. Bevezetés a Pythonba</h2>
@@ -142,29 +128,12 @@
                         <li>Írd ki a világ legjobb programozási nyelvét!</li>
                     </ol>
                 </div>
-            </article>
         </section>
     </main>
+    <script src="script.js"></script>
 
     <footer>
         <p>&copy; 2025 Python Kurzus. Minden jog fenntartva.</p>
     </footer>
-    <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            const hamburger = document.querySelector('.hamburger');
-            const sidebar = document.querySelector('.sidebar');
-
-            hamburger.addEventListener('click', () => {
-                sidebar.classList.toggle('hidden');
-
-                const navLinks = sidebar.querySelectorAll('nav ul li a');
-                navLinks.forEach(link => {
-                    if (link.classList.contains('active')) {
-                        link.style.backgroundColor = '#d9a58b';
-                    }
-                });
-            });
-        });
-    </script>
 </body>
 </html>
