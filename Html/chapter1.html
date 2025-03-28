@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - Bevezetés</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html" class="active">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html">Táblázatok</a></li>
+                    <li><a href="chapter6.html">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>1. Bevezetés a HTML-be</h2>
+                <h3>Mi az a HTML?</h3>
+                <p>A HTML (HyperText Markup Language) a weblapok alapvető nyelve, amely meghatározza a weboldalak szerkezetét és tartalmát.</p>
+                <ul>
+                    <li>A HTML nem egy programozási nyelv, hanem egy jelölőnyelv.</li>
+                    <li>Lehetővé teszi szövegek, képek, linkek és egyéb elemek megjelenítését a weboldalon.</li>
+                </ul>
+                
+                <h3>HTML Alapstruktúrája</h3>
+                <p>Minden HTML dokumentum egy adott szerkezetet követ. Íme egy egyszerű HTML oldal:</p>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+&lt;head&gt;
+    &lt;title&gt;Első Weboldalam&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Üdvözöllek a weboldalamon!&lt;/h1&gt;
+    &lt;p&gt;Ez az első HTML oldalam.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h3>HTML Elemei</h3>
+                <p>A HTML dokumentum különböző elemekből áll, amelyeket címkék (<code>&lt;tag&gt;</code>) határoznak meg.</p>
+                <ul>
+                    <li><code>&lt;html&gt;</code> - A dokumentum kezdete és vége.</li>
+                    <li><code>&lt;head&gt;</code> - A dokumentum fejléce (pl. cím, meta adatok).</li>
+                    <li><code>&lt;body&gt;</code> - A dokumentum fő tartalma.</li>
+                    <li><code>&lt;h1&gt;</code> - Főcím.</li>
+                    <li><code>&lt;p&gt;</code> - Bekezdés.</li>
+                </ul>
+
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy HTML fájlt, amely tartalmaz egy főcímet és egy bekezdést.</li>
+                    <li>Módosítsd a címet és a szöveget saját tartalommal!</li>
+                    <li>Próbálj meg további HTML elemeket hozzáadni!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

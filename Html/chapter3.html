@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - HTML Szövegformázás</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html" class="active">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html">Táblázatok</a></li>
+                    <li><a href="chapter6.html">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>3. HTML Szövegformázás</h2>
+                <h3>Alapvető Szövegformázási Elemek</h3>
+                <p>A HTML lehetőséget biztosít a szöveg formázására különböző elemek segítségével.</p>
+                
+                <h3>Félkövér és Dőlt Betűk</h3>
+                <pre><code>
+&lt;b&gt;Félkövér szöveg&lt;/b&gt;
+&lt;strong&gt;Fontos félkövér szöveg&lt;/strong&gt;
+&lt;i&gt;Dőlt szöveg&lt;/i&gt;
+&lt;em&gt;Kiemelt dőlt szöveg&lt;/em&gt;
+                </code></pre>
+                
+                <h3>Aláhúzott és Áthúzott Szöveg</h3>
+                <pre><code>
+&lt;u&gt;Aláhúzott szöveg&lt;/u&gt;
+&lt;s&gt;Áthúzott szöveg&lt;/s&gt;
+                </code></pre>
+                
+                <h3>Felső és Alsó Index</h3>
+                <p>A <code>&lt;sup&gt;</code> és a <code>&lt;sub&gt;</code> elem indexeli a tartalmat.</p>
+                <pre><code>
+H<sup>2</sup>O (felső index)
+X<sub>2</sub> (alsó index)
+                </code></pre>
+                
+                <h3>Idézetek és Kódrészletek</h3>
+                <pre><code>
+&lt;blockquote&gt;Ez egy hosszabb idézet.&lt;/blockquote&gt;
+&lt;q&gt;Ez egy rövidebb idézet.&lt;/q&gt;
+&lt;code&gt;Ez egy kódrészlet.&lt;/code&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy HTML oldalt, amely tartalmaz félkövér, dőlt és aláhúzott szöveget.</li>
+                    <li>Használj felső és alsó indexeket egy matematikai képletben.</li>
+                    <li>Formázz egy idézetet és egy kódrészletet HTML-ben.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

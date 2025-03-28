@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - Képek és Linkek</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html" class="active">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html">Táblázatok</a></li>
+                    <li><a href="chapter6.html">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>4. Képek és Linkek</h2>
+                <h3>Képek Beszúrása</h3>
+                <p>A HTML <code>&lt;img&gt;</code> tag használatával képeket szúrhatunk be az oldalra.</p>
+                <pre><code>
+&lt;img src="kep.jpg" alt="Leírás a képről" width="300" height="200"&gt;
+                </code></pre>
+                <p>A <code>alt</code> attribútum a kép leírását adja meg, amely segíti a keresőoptimalizálást és az akadálymentesítést.</p>
+                
+                <h3>Hivatkozások (Linkek)</h3>
+                <p>A HTML <code>&lt;a&gt;</code> tag segítségével linkeket hozhatunk létre.</p>
+                <pre><code>
+&lt;a href="https://www.example.com" target="_blank"&gt;Látogasd meg az oldalt&lt;/a&gt;
+                </code></pre>
+                <p>A <code>target="_blank"</code> beállítás új lapon nyitja meg a linket.</p>
+                
+                <h3>Horgonyok és Belső Linkek</h3>
+                <p>Belső hivatkozásokat is létrehozhatunk az oldalon belüli navigációhoz.</p>
+                <pre><code>
+&lt;a href="#szakasz"&gt;Ugrás egy adott részhez&lt;/a&gt;
+...
+&lt;h2 id="szakasz"&gt;Ez a célpont&lt;/h2&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Helyezz el egy képet az oldaladra és adj hozzá egy <code>alt</code> szöveget.</li>
+                    <li>Készíts egy linket, amely egy másik weboldalra mutat.</li>
+                    <li>Használj egy belső hivatkozást egy adott oldalrészhez.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

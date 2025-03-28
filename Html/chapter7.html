@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - HTML5 és Multimédia</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html">Táblázatok</a></li>
+                    <li><a href="chapter6.html">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html" class="active">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>7. HTML5 és Multimédia</h2>
+                <h2>Ez a menü nincs az alapvizsgába tudomásom szerint, de érdemes átnézni!</h2>
+                <h3>Videók Beágyazása</h3>
+                <p>A HTML5 lehetőséget biztosít videók beágyazására az <code>&lt;video&gt;</code> elem segítségével.</p>
+                <pre><code>
+&lt;video width="640" height="360" controls&gt;
+    &lt;source src="video.mp4" type="video/mp4"&gt;
+    A böngésződ nem támogatja a videó lejátszását.
+&lt;/video&gt;
+                </code></pre>
+                
+                <h3>Audió Fájlok Beágyazása</h3>
+                <p>Hangfájlokat az <code>&lt;audio&gt;</code> tag segítségével játszhatunk le.</p>
+                <pre><code>
+&lt;audio controls&gt;
+    &lt;source src="audio.mp3" type="audio/mpeg"&gt;
+    A böngésződ nem támogatja az audió lejátszást.
+&lt;/audio&gt;
+                </code></pre>
+                
+                <h3>Beágyazott Tartalom (Iframe)</h3>
+                <p>Más weboldalak vagy térképek beágyazására az <code>&lt;iframe&gt;</code> elem használható.</p>
+                <pre><code>
+&lt;iframe width="600" height="400" src="https://www.example.com"&gt;&lt;/iframe&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Helyezz el egy videót az oldaladon, amely MP4 formátumban elérhető.</li>
+                    <li>Adj hozzá egy audió fájlt, amely MP3 formátumú.</li>
+                    <li>Ágyazz be egy Google Maps térképet egy adott helyről.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

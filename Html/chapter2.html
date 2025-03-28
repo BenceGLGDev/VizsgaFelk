@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - HTML Alapjai</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html" class="active">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html">Táblázatok</a></li>
+                    <li><a href="chapter6.html">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>2. HTML Alapjai</h2>
+                <h3>Alapvető HTML Elemei</h3>
+                <p>Ebben a fejezetben megismerkedünk a legfontosabb HTML elemekkel.</p>
+                
+                <h3>Fejlécek és Bekezdések</h3>
+                <p>A HTML-ben különböző szintű címsorokat (<code>&lt;h1&gt;</code> - <code>&lt;h6&gt;</code>) és bekezdéseket (<code>&lt;p&gt;</code>) használhatunk.</p>
+                <pre><code>
+&lt;h1&gt;Ez egy főcím&lt;/h1&gt;
+&lt;h2&gt;Ez egy alcím&lt;/h2&gt;
+&lt;p&gt;Ez egy bekezdés szöveg.&lt;/p&gt;
+                </code></pre>
+                
+                <h3>Listák</h3>
+                <p>A HTML-ben kétféle lista létezik:</p>
+                <ul>
+                    <li>Rendezett lista (<code>&lt;ol&gt;</code>)</li>
+                    <li>Rendezetlen lista (<code>&lt;ul&gt;</code>)</li>
+                </ul>
+                <pre><code>
+&lt;ul&gt;
+    &lt;li&gt;Első elem&lt;/li&gt;
+    &lt;li&gt;Második elem&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;ol&gt;
+    &lt;li&gt;Első elem&lt;/li&gt;
+    &lt;li&gt;Második elem&lt;/li&gt;
+&lt;/ol&gt;
+                </code></pre>
+                
+                <h3>Div és Span</h3>
+                <p>A <code>&lt;div&gt;</code> és <code>&lt;span&gt;</code> elemek konténerek, amelyeket az oldal elrendezésére és formázására használunk.</p>
+                <pre><code>
+&lt;div&gt;Ez egy blokkszintű elem.&lt;/div&gt;
+&lt;span&gt;Ez egy soron belüli elem.&lt;/span&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy HTML oldalt, amely tartalmaz különböző szintű címsorokat és egy bekezdést.</li>
+                    <li>Hozz létre egy listát kedvenc ételeidről.</li>
+                    <li>Használj <code>&lt;div&gt;</code> és <code>&lt;span&gt;</code> elemeket egy egyszerű elrendezéshez.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
