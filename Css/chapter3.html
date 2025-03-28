@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Box Model</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html" class="active">Box Model</a></li>
+                    <li><a href="chapter4.html">Pozicionálás</a></li>
+                    <li><a href="chapter5.html">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>3. Box Model</h2>
+
+                <h3>Mi az a Box Model?</h3>
+                <p>A CSS Box Model minden HTML elemet egy dobozként kezel. Négy fő részből áll:</p>
+                <ul>
+                    <li><strong>Content (Tartalom)</strong> – Az elem tényleges tartalma (szöveg, kép stb.).</li>
+                    <li><strong>Padding</strong> – A tartalom és a keret közötti tér.</li>
+                    <li><strong>Border</strong> – A dobozt körülvevő keret.</li>
+                    <li><strong>Margin</strong> – Az elem körüli külső tér, amely elválasztja más elemektől.</li>
+                </ul>
+                
+                <h3>Box Model felépítése</h3>
+                <pre><code>div {
+    width: 200px;
+    height: 100px;
+    padding: 20px;
+    border: 5px solid black;
+    margin: 10px;
+}</code></pre>
+                
+                <h3>Példa Box Modelre</h3>
+                <p>Az alábbi példában látható, hogyan befolyásolják a különböző tulajdonságok a doboz méretét:</p>
+                <pre><code>.box {
+    width: 300px;
+    padding: 20px;
+    border: 10px solid blue;
+    margin: 30px;
+    background-color: lightgray;
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Adj egy 15px-es <code>padding</code>-ot egy div elemhez!</li>
+                    <li>Állíts be egy 5px-es piros színű <code>border</code>-t!</li>
+                    <li>Növeld a <code>margin</code>-t 25px-re egy bekezdésen!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

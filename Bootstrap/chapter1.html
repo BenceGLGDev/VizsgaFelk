@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Kurzus - Bevezetés</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bootstrap Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html" class="active">Bevezetés</a></li>
+                    <li><a href="chapter2.html">Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfia</a></li>
+                    <li><a href="chapter4.html">Komponensek</a></li>
+                    <li><a href="chapter5.html">Űrlapok</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>1. Bevezetés a Bootstrap-be</h2>
+                <p>A Bootstrap egy népszerű CSS keretrendszer, amely segít reszponzív és modern weboldalakat létrehozni.</p>
+                
+                <h3>Bootstrap Használata</h3>
+                <p>A legegyszerűbb módja a Bootstrap használatának, ha a CDN-en keresztül hivatkozzuk:</p>
+                <pre><code>
+&lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+                </code></pre>
+                
+                <h3>Első Bootstrap Oldal</h3>
+                <p>Készítsünk egy alapvető Bootstrap oldalt:</p>
+                <pre><code>
+&lt;!DOCTYPE html&gt;
+&lt;html lang="hu"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Bootstrap Példa&lt;/title&gt;
+    &lt;link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet"&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;div class="container"&gt;
+        &lt;h1&gt;Hello, Bootstrap!&lt;/h1&gt;
+    &lt;/div&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok</h3>
+                <ol>
+                    <li>Hozz létre egy új Bootstrap HTML fájlt és adj hozzá egy <code>h1</code> címsort.</li>
+                    <li>Használj egy Bootstrap osztályt a szöveg formázására.</li>
+                    <li>Próbáld ki a <code>container</code> és <code>row</code> osztályokat.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

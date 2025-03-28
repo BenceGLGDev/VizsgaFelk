@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kurzus - Összefoglaló</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        .button-container {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .learn-more {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            color: white;
+            background-color: #007BFF;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+        .learn-more:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Python Kurzus</h1>
+        <p>Tanulj meg programozni a Python nyelv alapjaitól a haladó szintig!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Pythonba</a></li>
+                    <li><a href="chapter2.html">Adatbevitel</a></li>
+                    <li><a href="chapter3.html">Ciklusok</a></li>
+                    <li><a href="chapter4.html">Boolean és Listák</a></li>
+                    <li><a href="chapter5.html">Random Modul</a></li>
+                    <li><a href="chapter6.html">Sztring Metódusok</a></li>
+                    <li><a href="chapter7.html">Tuple és Szótárak</a></li>
+                    <li><a href="chapter8.html">Függvények és Eljárások</a></li>
+                    <li><a href="chapter9.html">Fájlkezelés</a></li>
+                    <li><a href="chapter10.html">Objektumorientált Programozás</a></li>
+                    <li><a href="summary.html" class="active">Összefoglaló</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>Összefoglaló</h2>
+                <p>Az alábbiakban összefoglaljuk a Python Kurzus során bemutatott főbb kódokat:</p>
+
+                <h3>Bevezetés</h3>
+                <pre><code>print("Hello, világ!")</code></pre>
+
+                <h3>Adatbevitel</h3>
+                <pre><code>nev = input("Mi a neved? ")
+print(f"Üdv, {nev}!")</code></pre>
+
+                <h3>Ciklusok</h3>
+                <pre><code>for i in range(1, 6):
+    print(i)</code></pre>
+
+                <h3>Boolean és Listák</h3>
+                <pre><code>gyumolcsok = ["alma", "körte", "szilva"]
+if "alma" in gyumolcsok:
+    print("Az alma benne van a listában.")</code></pre>
+
+                <h3>Random Modul</h3>
+                <pre><code>import random
+szam = random.randint(1, 10)
+print(szam)</code></pre>
+
+                <h3>Sztring Metódusok</h3>
+                <pre><code>szoveg = "hello python"
+print(szoveg.capitalize())</code></pre>
+
+                <h3>Tuple és Szótárak</h3>
+                <pre><code>my_dict = {
+    "nev": "Anna",
+    "kor": 25
+}
+print(my_dict["nev"])</code></pre>
+
+                <h3>Függvények és Eljárások</h3>
+                <pre><code>def koszont(nev="Vendég"):
+    print(f"Üdv, {nev}!")
+
+koszont("Anna")</code></pre>
+
+                <h3>Fájlkezelés</h3>
+                <pre><code>with open("fajl.txt", "w", encoding="utf-8") as f:
+    f.write("Hello, világ!")</code></pre>
+
+                <h3>Objektumorientált Programozás</h3>
+                <pre><code>class Ember:
+    def __init__(self, nev, kor):
+        self.nev = nev
+        self.kor = kor
+
+    def koszont(self):
+        print(f"Szia, {self.nev}!")
+
+ember1 = Ember("Anna", 25)
+ember1.koszont()</code></pre>
+
+                <div class="button-container">
+                    <a href="https://www.w3schools.com/python/" target="_blank" class="learn-more">Tanulj tovább a W3Schools Python oldalán</a>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Python Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

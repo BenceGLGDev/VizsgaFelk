@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Python Kurzus - Random Modul</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Python Kurzus</h1>
+        <p>Tanulj meg programozni a Python nyelv alapjaitól a haladó szintig!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Pythonba</a></li>
+                    <li><a href="chapter2.html">Adatbevitel</a></li>
+                    <li><a href="chapter3.html">Ciklusok</a></li>
+                    <li><a href="chapter4.html">Boolean és Listák</a></li>
+                    <li><a href="chapter5.html" class="active">Random Modul</a></li>
+                    <li><a href="chapter6.html">Sztring Metódusok</a></li>
+                    <li><a href="chapter7.html">Tuple és Szótárak</a></li>
+                    <li><a href="chapter8.html">Függvények és Eljárások</a></li>
+                    <li><a href="chapter9.html">Fájlkezelés</a></li>
+                    <li><a href="chapter10.html">Objektumorientált Programozás</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>5. Random Modul</h2>
+
+                <h3>Modulok Importálása</h3>
+                <p>A modul egy olyan fájl, amely funkciókat és értékeket tartalmaz, amelyekre hivatkozni lehet a programból.</p>
+                <p>Az importálás szintaxisa:</p>
+                <pre><code>import modulnev</code></pre>
+
+                <h3>Beépített Modulok</h3>
+                <p>A Python több beépített modult is biztosít, például:</p>
+                <ul>
+                    <li><strong>random:</strong> véletlen műveletekre (véletlen szám, lista keverése stb.).</li>
+                    <li><strong>math:</strong> matematikai műveletekre (gyökvonás, hatványozás stb.).</li>
+                </ul>
+
+                <h3>A Random Modul</h3>
+                <p>A random modul véletlen műveletekre használható. A használathoz importálni kell a modult:</p>
+                <pre><code>import random</code></pre>
+
+                <h3>Véletlen Szám Generálás</h3>
+                <h4>Egész számok:</h4>
+                <p>Egész szám generálása a <code>randint</code> függvénnyel:</p>
+                <pre><code>import random
+szam = random.randint(1, 10)
+print(szam)  # 1 és 10 közötti véletlen szám</code></pre>
+
+                <p>Alternatíva: <code>randrange</code>:</p>
+                <pre><code>szam = random.randrange(1, 10)
+print(szam)  # 1 és 9 közötti véletlen szám</code></pre>
+
+                <h4>Lebegőpontos számok:</h4>
+                <p>Lebegőpontos szám generálása 0.0 és 1.0 között:</p>
+                <pre><code>szam = random.random()
+print(szam)</code></pre>
+
+                <p>Két szám közötti lebegőpontos szám generálása:</p>
+                <pre><code>szam = random.uniform(1.5, 5.5)
+print(szam)  # 1.5 és 5.5 közötti véletlen szám</code></pre>
+
+                <h3>Lista Műveletek</h3>
+                <h4>Véletlen elem kiválasztása:</h4>
+                <pre><code>lista = ["alma", "körte", "barack"]
+elem = random.choice(lista)
+print(elem)  # Egy véletlen elem a listából</code></pre>
+
+                <h4>Véletlen több elem kiválasztása:</h4>
+                <pre><code>elemek = random.sample(lista, 2)
+print(elemek)  # Két véletlen elem a listából</code></pre>
+
+                <h4>Lista összekeverése:</h4>
+                <p>A lista elemeit véletlenszerű sorrendbe állíthatjuk:</p>
+                <pre><code>random.shuffle(lista)
+print(lista)  # A lista véletlenszerűen összekeverve</code></pre>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Python Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
+<script src="script.js"></script>

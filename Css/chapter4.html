@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Pozicionálás</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html">Box Model</a></li>
+                    <li><a href="chapter4.html" class="active">Pozicionálás</a></li>
+                    <li><a href="chapter5.html">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>4. Pozicionálás</h2>
+
+                <h3>Mi az a CSS Pozicionálás?</h3>
+                <p>A CSS-ben az elemek elhelyezkedését a <code>position</code> tulajdonsággal szabályozhatjuk.</p>
+                <ul>
+                    <li><strong>static</strong> – Alapértelmezett érték, az elem a normál dokumentumfolyamban marad.</li>
+                    <li><strong>relative</strong> – Az elem a saját eredeti helyzetéhez képest mozgatható.</li>
+                    <li><strong>absolute</strong> – Az elem az első <code>relative</code> vagy <code>absolute</code> ős elemhez képest pozicionálódik.</li>
+                    <li><strong>fixed</strong> – Az elem a nézetablakhoz rögzítve marad görgetéskor is.</li>
+                    <li><strong>sticky</strong> – Az elem a görgetés során egy meghatározott pozícióhoz tapad.</li>
+                </ul>
+                
+                <h3>Példa Pozicionálásra</h3>
+                <pre><code>.box {
+    position: relative;
+    top: 20px;
+    left: 50px;
+    background-color: lightblue;
+    padding: 10px;
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Helyezd el egy elem <code>absolute</code> pozícióval a jobb felső sarokba!</li>
+                    <li>Adj egy elemnek <code>fixed</code> pozíciót, hogy mindig látható maradjon!</li>
+                    <li>Készíts egy <code>sticky</code> navigációs sávot!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

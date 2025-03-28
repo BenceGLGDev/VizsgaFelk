@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Bevezetés</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html" class="active">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html">Box Model</a></li>
+                    <li><a href="chapter4.html">Pozicionálás</a></li>
+                    <li><a href="chapter5.html">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>1. Bevezetés a CSS-be</h2>
+
+                <h3>Mi is az a CSS?</h3>
+                <p>A CSS (Cascading Style Sheets) a weboldalak megjelenésének szabályozására szolgál. Segítségével beállíthatjuk a színeket, betűtípusokat, elrendezést és animációkat.</p>
+                
+                <h3>Miért fontos a CSS?</h3>
+                <ul>
+                    <li>Elválasztja a tartalmat és a megjelenést.</li>
+                    <li>Egyszerűsíti a weboldalak karbantartását.</li>
+                    <li>Reszponzív designt tesz lehetővé.</li>
+                </ul>
+                
+                <h3>CSS szintaxis</h3>
+                <pre><code>selector {
+    property: value;
+}</code></pre>
+                
+                <h3>CSS használatának módjai</h3>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Módszer</th>
+                            <th>Leírás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Inline CSS</td>
+                            <td>Elemekhez egyenként alkalmazható a style attribútummal.</td>
+                        </tr>
+                        <tr>
+                            <td>Belső CSS</td>
+                            <td>A &lt;style&gt; blokkban az HTML fájlon belül.</td>
+                        </tr>
+                        <tr>
+                            <td>Külső CSS</td>
+                            <td>Külön fájlban (.css) tárolt stíluslap.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <h3>Példa egy egyszerű CSS-re</h3>
+                <pre><code>body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+}</code></pre>
+
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Állítsd be a háttérszínt sárgára az <code>body</code> elemben!</li>
+                    <li>Változtasd meg a szöveg színét pirosra!</li>
+                    <li>Adj hozzá egy külső CSS fájlt a weboldalhoz!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

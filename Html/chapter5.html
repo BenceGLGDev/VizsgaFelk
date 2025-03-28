@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - Táblázatok</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html" class="active">Táblázatok</a></li>
+                    <li><a href="chapter6.html">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>5. Táblázatok</h2>
+                <h3>Egyszerű Táblázat</h3>
+                <p>A HTML <code>&lt;table&gt;</code> tag használatával hozhatunk létre táblázatokat.</p>
+                <pre><code>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th&gt;Név&lt;/th&gt;
+        &lt;th&gt;Kor&lt;/th&gt;
+        &lt;th&gt;Város&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Péter&lt;/td&gt;
+        &lt;td&gt;25&lt;/td&gt;
+        &lt;td&gt;Budapest&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                </code></pre>
+                
+                <h3>Fejléc és Lábjegyzet</h3>
+                <pre><code>
+&lt;table&gt;
+    &lt;thead&gt;
+        &lt;tr&gt;
+            &lt;th&gt;Termék&lt;/th&gt;
+            &lt;th&gt;Ár&lt;/th&gt;
+        &lt;/tr&gt;
+    &lt;/thead&gt;
+    &lt;tbody&gt;
+        &lt;tr&gt;
+            &lt;td&gt;Laptop&lt;/td&gt;
+            &lt;td&gt;200 000 Ft&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tbody&gt;
+    &lt;tfoot&gt;
+        &lt;tr&gt;
+            &lt;td colspan="2"&gt;Összesen: 200 000 Ft&lt;/td&gt;
+        &lt;/tr&gt;
+    &lt;/tfoot&gt;
+&lt;/table&gt;
+                </code></pre>
+                
+                <h3>Cellák Egyesítése</h3>
+                <pre><code>
+&lt;table border="1"&gt;
+    &lt;tr&gt;
+        &lt;th colspan="2"&gt;Egyesített cella&lt;/th&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+        &lt;td&gt;Bal oldali cella&lt;/td&gt;
+        &lt;td&gt;Jobb oldali cella&lt;/td&gt;
+    &lt;/tr&gt;
+&lt;/table&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Készíts egy táblázatot, amely tartalmaz három oszlopot és három sort.</li>
+                    <li>Adj hozzá egy táblázatfejlécet és egy lábjegyzetet.</li>
+                    <li>Használj cellaösszevonást a táblázatban.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

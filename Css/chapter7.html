@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Reszponzív Design</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html">Box Model</a></li>
+                    <li><a href="chapter4.html">Pozicionálás</a></li>
+                    <li><a href="chapter5.html">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html" class="active">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>7. Reszponzív Design</h2>
+
+                <h3>Mi az a Reszponzív Design?</h3>
+                <p>A reszponzív webdesign lehetővé teszi, hogy a weboldalak különböző képernyőméreteken és eszközökön jól nézzenek ki és megfelelően működjenek.</p>
+                
+                <h3>Alapvető technikák</h3>
+                <ul>
+                    <li><strong>Rugalmas rácsrendszerek:</strong> A CSS Grid és Flexbox használata az elrendezés rugalmas kezelésére.</li>
+                    <li><strong>Reszponzív képek:</strong> <code>max-width: 100%</code> beállítás használata a képek megfelelő méretezéséhez.</li>
+                    <li><strong>Média lekérdezések:</strong> CSS <code>@media</code> szabályok alkalmazása különböző képernyőméretekhez.</li>
+                </ul>
+                
+                <h3>Példa Média lekérdezésre</h3>
+                <pre><code>@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Készíts egy <code>@media</code> szabályt, amely 600px alatti kijelzőknél módosítja az elrendezést!</li>
+                    <li>Használj rugalmas képeket a <code>max-width: 100%</code> tulajdonsággal!</li>
+                    <li>Próbálj ki egy CSS Grid vagy Flexbox elrendezést, amely reszponzívan alkalmazkodik!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

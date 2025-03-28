@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HTML Kurzus - Űrlapok és Inputok</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>HTML Kurzus</h1>
+        <p>Webfejlesztés alapok 10. évfolyam</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a HTML-be</a></li>
+                    <li><a href="chapter2.html">HTML Alapjai</a></li>
+                    <li><a href="chapter3.html">HTML Szövegformázás</a></li>
+                    <li><a href="chapter4.html">Képek és Linkek</a></li>
+                    <li><a href="chapter5.html">Táblázatok</a></li>
+                    <li><a href="chapter6.html" class="active">Űrlapok és Inputok</a></li>
+                    <li><a href="chapter7.html">HTML5 és Multimédia</a></li>
+                    <li><a href="chapter8.html">Reszponzív Design</a></li>
+                    <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>6. Űrlapok és Inputok</h2>
+                <h3>Egyszerű Űrlap</h3>
+                <p>Az <code>&lt;form&gt;</code> elem használatával készíthetünk űrlapokat a felhasználói adatok bekérésére.</p>
+                <pre><code>
+&lt;form action="submit.php" method="post"&gt;
+    &lt;label for="nev"&gt;Név:&lt;/label&gt;
+    &lt;input type="text" id="nev" name="nev" required&gt;
+    &lt;br&gt;
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    &lt;br&gt;
+    &lt;input type="submit" value="Küldés"&gt;
+&lt;/form&gt;
+                </code></pre>
+                
+                <h3>Különböző Input Típusok</h3>
+                <p>A HTML különböző <code>&lt;input&gt;</code> típusokat támogat.</p>
+                <pre><code>
+&lt;input type="text" placeholder="Szövegbevitel"&gt;
+&lt;input type="password" placeholder="Jelszó"&gt;
+&lt;input type="number" placeholder="Szám"&gt;
+&lt;input type="date"&gt;
+&lt;input type="checkbox"&gt; Elfogadom a feltételeket
+&lt;input type="radio" name="valasztas" value="A"> Opció A
+&lt;input type="radio" name="valasztas" value="B"> Opció B
+                </code></pre>
+                
+                <h3>Legördülő Menü és Szövegterület</h3>
+                <pre><code>
+&lt;select name="valasztas"&gt;
+    &lt;option value="1"&gt;Első lehetőség&lt;/option&gt;
+    &lt;option value="2"&gt;Második lehetőség&lt;/option&gt;
+&lt;/select&gt;
+&lt;br&gt;
+&lt;textarea name="megjegyzes" rows="4" cols="30" placeholder="Írjon ide..."&gt;&lt;/textarea&gt;
+                </code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Készíts egy űrlapot név és email bekérésére.</li>
+                    <li>Adj hozzá egy jelszómezőt és egy küldés gombot.</li>
+                    <li>Hozz létre egy legördülő menüt legalább három lehetőséggel.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 HTML Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

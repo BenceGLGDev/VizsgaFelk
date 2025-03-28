@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Flexbox</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html">Box Model</a></li>
+                    <li><a href="chapter4.html">Pozicionálás</a></li>
+                    <li><a href="chapter5.html" class="active">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>5. Flexbox</h2>
+
+                <h3>Mi az a Flexbox?</h3>
+                <p>A Flexbox (Flexible Box Layout) egy erőteljes eszköz, amely lehetővé teszi a HTML elemek hatékony és dinamikus elrendezését egy dimenzióban (sor vagy oszlop).</p>
+                
+                <h3>Alapvető Flexbox tulajdonságok</h3>
+                <ul>
+                    <li><code>display: flex;</code> – Flexbox bekapcsolása egy szülőelemre.</li>
+                    <li><code>flex-direction</code> – A tengely irányának beállítása (<code>row</code>, <code>column</code> stb.).</li>
+                    <li><code>justify-content</code> – Az elemek igazítása a főtengely mentén.</li>
+                    <li><code>align-items</code> – Az elemek igazítása a keresztirányú tengely mentén.</li>
+                    <li><code>flex-wrap</code> – Meghatározza, hogy az elemek törjenek-e több sorba.</li>
+                </ul>
+                
+                <h3>Példa Flexbox használatára</h3>
+                <pre><code>.container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    background-color: lightgray;
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy rugalmas konténert <code>display: flex;</code> használatával!</li>
+                    <li>Igazítsd az elemeket középre a főtengely mentén!</li>
+                    <li>Állítsd be az elemeket, hogy függőlegesen középre kerüljenek!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

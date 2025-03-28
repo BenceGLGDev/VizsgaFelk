@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Animációk és Átmenetek</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html">Box Model</a></li>
+                    <li><a href="chapter4.html">Pozicionálás</a></li>
+                    <li><a href="chapter5.html">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html" class="active">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>8. Animációk és Átmenetek</h2>
+
+                <h3>Miért fontosak az animációk?</h3>
+                <p>A CSS animációk és átmenetek vizuálisan vonzóbbá teszik a weboldalakat, és segítenek a felhasználói élmény javításában.</p>
+                
+                <h3>CSS Átmenetek</h3>
+                <p>Az átmenetek lehetővé teszik az elemek tulajdonságainak zökkenőmentes változását.</p>
+                <pre><code>button {
+    background-color: blue;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: red;
+}</code></pre>
+                
+                <h3>CSS Animációk</h3>
+                <p>Az animációk segítségével komplexebb mozgásokat és változásokat valósíthatunk meg.</p>
+                <pre><code>@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.element {
+    animation: fadeIn 2s ease-in;
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy gombot, amely színátmenetet kap <code>hover</code> eseményre!</li>
+                    <li>Animálj egy elemet, hogy fokozatosan jelenjen meg a képernyőn!</li>
+                    <li>Készíts egy saját <code>@keyframes</code> animációt, amely mozgat egy elemet!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

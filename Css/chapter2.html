@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Kurzus - Színek és Betűtípusok</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>CSS Kurzus</h1>
+        <p>Webdesign alapok</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a CSS-be</a></li>
+                    <li><a href="chapter2.html" class="active">Színek és Betűtípusok</a></li>
+                    <li><a href="chapter3.html">Box Model</a></li>
+                    <li><a href="chapter4.html">Pozicionálás</a></li>
+                    <li><a href="chapter5.html">Flexbox</a></li>
+                    <li><a href="chapter6.html">Grid</a></li>
+                    <li><a href="chapter7.html">Reszponzív Design</a></li>
+                    <li><a href="chapter8.html">Animációk és Átmenetek</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>2. Színek és Betűtípusok</h2>
+
+                <h3>CSS színek</h3>
+                <p>A CSS-ben többféle módon adhatunk meg színeket:</p>
+                <ul>
+                    <li>Nevek (pl. <code>red</code>, <code>blue</code>)</li>
+                    <li>Hexadecimális kódok (pl. <code>#ff0000</code>)</li>
+                    <li>RGB értékek (pl. <code>rgb(255, 0, 0)</code>)</li>
+                    <li>HSL értékek (pl. <code>hsl(0, 100%, 50%)</code>)</li>
+                </ul>
+                
+                <h3>Példa színek használatára</h3>
+                <pre><code>body {
+    background-color: lightgray;
+    color: navy;
+}</code></pre>
+                
+                <h3>CSS betűtípusok</h3>
+                <p>A betűtípusokat a <code>font-family</code> tulajdonsággal állíthatjuk be.</p>
+                
+                <h3>Példa betűtípusok használatára</h3>
+                <pre><code>p {
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    font-weight: bold;
+    font-style: italic;
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Állítsd be a háttérszínt zöldre!</li>
+                    <li>Változtasd meg az összes szöveg színét kékre!</li>
+                    <li>Használj egyedi betűtípust az oldal főcíméhez!</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 CSS Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
