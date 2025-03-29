@@ -1,88 +1,343 @@
 <!DOCTYPE html>
 <html lang="hu">
-	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Bootstrap Kurzus - Grid rendszer</title>
-		<link rel="stylesheet" href="course_styles.css" />
-	</head>
-	<body>
-		<header>
-			<h1>Bootstrap Grid Rendszer</h1>
-			<p>Hogyan építsünk reszponzív elrendezéseket a Bootstrap segítségével?</p>
-		</header>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Kurzus - Container és Grid Rendszer</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #e6f2ff;
+            border: 1px solid #8bb3d9;
+        }
+        th {
+            background-color: #8bb3d9;
+            color: white;
+        }
+        .grid-example div {
+            background-color: #cfe5ff;
+            border: 1px solid #8bb3d9;
+            padding: 10px;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .grid-example .alt {
+            background-color: #b3d1ff;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív weboldalakat készíteni a Bootstrap 5.3 keretrendszerrel!</p>
+    </header>
 
-		<main>
-			<aside class="sidebar">
-				<nav>
-					<ul>
-						<li><a href="chapter1.html">Bevezetés</a></li>
-						<li><a href="chapter2.html" class="active">Grid Rendszer</a></li>
-						<li><a href="chapter3.html">Tipográfia</a></li>
-						<li><a href="chapter4.html">Komponensek</a></li>
-						<li><a href="chapter5.html">Űrlapok</a></li>
-                        <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
-					</ul>
-				</nav>
-			</aside>
-			<section class="content">
-				<article class="chapter">
-					<h2>2. Grid Rendszer és Layout</h2>
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html" class="active">Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
 
-					<h3>Mi az a Bootstrap Grid rendszer?</h3>
-					<p>
-						A Bootstrap egy 12 oszlopos rácsrendszert (grid system) használ,
-						amely lehetővé teszi reszponzív elrendezések létrehozását könnyedén.
-					</p>
+        <section class="content">
+            <article class="chapter">
+                <!-- Main Title -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>2. Container és Grid Rendszer</h2>
+                </div>
 
-					<h3>Konténerek és sorok</h3>
-					<p>
-						A Bootstrap rácsrendszerének alapja a <code>container</code> és
-						<code>row</code> osztályok:
-					</p>
-					<pre><code>
+                <!-- Container Section -->
+                <h3>Bootstrap Containerek</h3>
+                <p>A container a Bootstrap grid rendszer alapja, amely az oldal tartalmának elrendezését biztosítja.</p>
+                
+                <h4>Container típusok</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Típus</th>
+                            <th>Osztály</th>
+                            <th>Leírás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Alapértelmezett container</td>
+                            <td><code>.container</code></td>
+                            <td>Rögzített szélességű, középre igazított tartalom minden breakpointnál</td>
+                        </tr>
+                        <tr>
+                            <td>Fluid container</td>
+                            <td><code>.container-fluid</code></td>
+                            <td>Teljes szélességű (100%) container minden képernyőméretnél</td>
+                        </tr>
+                        <tr>
+                            <td>Reszponzív containerek</td>
+                            <td><code>.container-{breakpoint}</code></td>
+                            <td>100% széles az adott breakpointig, utána rögzített szélességű</td>
+                        </tr>
+                    </tbody>
+                </table>
+                
+                <h4>Container kód példa:</h4>
+                <pre><code>&lt;!-- Alapértelmezett container --&gt;
 &lt;div class="container"&gt;
+    &lt;!-- Tartalom --&gt;
+&lt;/div&gt;
+
+&lt;!-- Fluid container --&gt;
+&lt;div class="container-fluid"&gt;
+    &lt;!-- Tartalom --&gt;
+&lt;/div&gt;
+
+&lt;!-- Reszponzív container (pl. md breakpointtól) --&gt;
+&lt;div class="container-md"&gt;
+    &lt;!-- Tartalom --&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Container maximális szélessége különböző képernyőméreteken:</h4>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Breakpoint</th>
+                            <th>Osztály prefix</th>
+                            <th>Képernyőméret</th>
+                            <th>Container max-width</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Extra kicsi</td>
+                            <td><code>xs</code></td>
+                            <td>&lt; 576px</td>
+                            <td>100%</td>
+                        </tr>
+                        <tr>
+                            <td>Kicsi</td>
+                            <td><code>sm</code></td>
+                            <td>≥ 576px</td>
+                            <td>540px</td>
+                        </tr>
+                        <tr>
+                            <td>Közepes</td>
+                            <td><code>md</code></td>
+                            <td>≥ 768px</td>
+                            <td>720px</td>
+                        </tr>
+                        <tr>
+                            <td>Nagy</td>
+                            <td><code>lg</code></td>
+                            <td>≥ 992px</td>
+                            <td>960px</td>
+                        </tr>
+                        <tr>
+                            <td>Extra nagy</td>
+                            <td><code>xl</code></td>
+                            <td>≥ 1200px</td>
+                            <td>1140px</td>
+                        </tr>
+                        <tr>
+                            <td>Extra extra nagy</td>
+                            <td><code>xxl</code></td>
+                            <td>≥ 1400px</td>
+                            <td>1320px</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <!-- Grid System Section -->
+                <h3>Bootstrap Grid Rendszer</h3>
+                <p>A Bootstrap egy 12 oszlopos, flexbox alapú grid rendszert használ a reszponzív elrendezések létrehozásához.</p>
+                
+                <h4>Grid rendszer alapjai</h4>
+                <ul>
+                    <li>A grid rendszer sorokból (<code>.row</code>) és oszlopokból (<code>.col-*</code>) áll.</li>
+                    <li>A sorok tartalmazzák az oszlopokat, és eltávolítják a containerek paddingját negatív margóval.</li>
+                    <li>Az oszlopok száma egy sorban tetszőleges, de a 12 oszlop teljes szélességet ad ki.</li>
+                    <li>Ha egy sorban az oszlopok összege több mint 12, az új oszlopok új sorba kerülnek.</li>
+                </ul>
+
+                <h4>Alapvető grid szerkezet:</h4>
+                <pre><code>&lt;div class="container"&gt;
     &lt;div class="row"&gt;
-        &lt;div class="col"&gt;Oszlop 1&lt;/div&gt;
-        &lt;div class="col"&gt;Oszlop 2&lt;/div&gt;
-        &lt;div class="col"&gt;Oszlop 3&lt;/div&gt;
+        &lt;div class="col"&gt;Egyenlő szélesség&lt;/div&gt;
+        &lt;div class="col"&gt;Egyenlő szélesség&lt;/div&gt;
+        &lt;div class="col"&gt;Egyenlő szélesség&lt;/div&gt;
     &lt;/div&gt;
-&lt;/div&gt;
-                </code></pre>
+&lt;/div&gt;</code></pre>
 
-					<h3>Oszlopok és felezések</h3>
-					<p>
-						Az oszlopokat a <code>col-*</code> osztályokkal szabályozhatjuk.
-						Példa két egyenlő oszlopra:
-					</p>
-					<pre><code>
+                <div class="grid-example">
+                    <div class="row">
+                        <div class="col">Egyenlő szélesség</div>
+                        <div class="col alt">Egyenlő szélesség</div>
+                        <div class="col">Egyenlő szélesség</div>
+                    </div>
+                </div>
+
+                <h4>Meghatározott oszlopszélesség:</h4>
+                <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-4"&gt;4 oszlop&lt;/div&gt;
+        &lt;div class="col-8"&gt;8 oszlop&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <div class="grid-example">
+                    <div class="row">
+                        <div class="col-4">4 oszlop</div>
+                        <div class="col-8 alt">8 oszlop</div>
+                    </div>
+                </div>
+
+                <!-- Responsive Breakpoints -->
+                <h3>Reszponzív breakpointok</h3>
+                <p>A Bootstrap 5.3 hat breakpointot használ a reszponzív design kialakításához:</p>
+                <ul>
+                    <li><code>xs</code>: Extra kicsi (&lt; 576px) - nincs prefix, csak <code>.col-*</code></li>
+                    <li><code>sm</code>: Kicsi (≥ 576px) - <code>.col-sm-*</code></li>
+                    <li><code>md</code>: Közepes (≥ 768px) - <code>.col-md-*</code></li>
+                    <li><code>lg</code>: Nagy (≥ 992px) - <code>.col-lg-*</code></li>
+                    <li><code>xl</code>: Extra nagy (≥ 1200px) - <code>.col-xl-*</code></li>
+                    <li><code>xxl</code>: Extra extra nagy (≥ 1400px) - <code>.col-xxl-*</code></li>
+                </ul>
+
+                <h4>Reszponzív oszlopok:</h4>
+                <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+            &lt;!-- Mobilon teljes szélesség, tableten fél szélesség, PC-n egyharmad szélesség --&gt;
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-6 col-lg-4"&gt;
+            &lt;!-- Mobilon teljes szélesség, tableten fél szélesség, PC-n egyharmad szélesség --&gt;
+        &lt;/div&gt;
+        &lt;div class="col-12 col-md-12 col-lg-4"&gt;
+            &lt;!-- Mobilon teljes szélesség, tableten teljes szélesség, PC-n egyharmad szélesség --&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Auto Layout -->
+                <h3>Automatikus elrendezés</h3>
+                <p>A Bootstrap lehetővé teszi az oszlopok automatikus méretezését is:</p>
+                
+                <h4>Egyenlő szélesség:</h4>
+                <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col"&gt;Auto&lt;/div&gt;
+    &lt;div class="col"&gt;Auto&lt;/div&gt;
+    &lt;div class="col"&gt;Auto&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Egy oszlop szélességének megadása:</h4>
+                <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col"&gt;Auto&lt;/div&gt;
+    &lt;div class="col-6"&gt;6 Oszlop&lt;/div&gt;
+    &lt;div class="col"&gt;Auto&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <div class="grid-example">
+                    <div class="row">
+                        <div class="col">Auto</div>
+                        <div class="col-6 alt">6 Oszlop</div>
+                        <div class="col">Auto</div>
+                    </div>
+                </div>
+
+                <!-- Row and Column Spacing -->
+                <h3>Sorok és oszlopok közötti távolság</h3>
+                
+                <h4>Gutters (oszlopok közötti rés):</h4>
+                <p>A gutters (paddinggal és negatív marginnal létrehozott) terek az oszlopok között:</p>
+                <pre><code>&lt;!-- Alapértelmezett gutter --&gt;
 &lt;div class="row"&gt;
-    &lt;div class="col-md-6"&gt;Bal oszlop&lt;/div&gt;
-    &lt;div class="col-md-6"&gt;Jobb oszlop&lt;/div&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
 &lt;/div&gt;
-                </code></pre>
 
-					<h3>Reszponzív tervezés alapjai</h3>
-					<p>Használhatunk különböző méretosztályokat:</p>
-					<ul>
-						<li><code>col-sm-*</code> (kis képernyők)</li>
-						<li><code>col-md-*</code> (közepes képernyők)</li>
-						<li><code>col-lg-*</code> (nagy képernyők)</li>
-						<li><code>col-xl-*</code> (extra nagy képernyők)</li>
-					</ul>
+&lt;!-- Gutter nélkül --&gt;
+&lt;div class="row g-0"&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+&lt;/div&gt;
 
-					<h3>Gyakorló Feladatok</h3>
-					<ol>
-						<li>Hozz létre egy 3 oszlopos elrendezést.</li>
-						<li>Próbáld ki a különböző méretosztályokat.</li>
-						<li>Hozz létre egy teljesen reszponzív layoutot.</li>
-					</ol>
-				</article>
-			</section>
-		</main>
+&lt;!-- Nagyobb gutters --&gt;
+&lt;div class="row g-5"&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
 
-		<footer>
-			<p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
-		</footer>
-	</body>
+                <h4>Reszponzív gutters:</h4>
+                <pre><code>&lt;!-- Mobilon nincs gutter, nagyobb képernyőn közepes gutter --&gt;
+&lt;div class="row g-0 g-md-4"&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+    &lt;div class="col"&gt;...&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Nesting -->
+                <h3>Beágyazott grid (Nesting)</h3>
+                <p>A Bootstrap lehetővé teszi a grid rendszer beágyazását oszlopokon belül:</p>
+                <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-sm-6"&gt;
+        Külső oszlop
+        &lt;div class="row"&gt;
+            &lt;div class="col-6"&gt;Beágyazott oszlop&lt;/div&gt;
+            &lt;div class="col-6"&gt;Beágyazott oszlop&lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="col-sm-6"&gt;
+        Külső oszlop
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Offsetting columns -->
+                <h3>Oszlopok eltolása (Offset)</h3>
+                <p>Az oszlopok eltolása lehetővé teszi, hogy üres helyet hagyj bizonyos oszlopok előtt:</p>
+                <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;col-md-4&lt;/div&gt;
+    &lt;div class="col-md-4 offset-md-4"&gt;col-md-4 offset-md-4&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <div class="grid-example">
+                    <div class="row">
+                        <div class="col-md-4">col-md-4</div>
+                        <div class="col-md-4 offset-md-4 alt">col-md-4 offset-md-4</div>
+                    </div>
+                </div>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy 3 oszlopos elrendezést, amely mobilon (xs) egymás alatt, tableten (md) 2+1 elrendezésben, asztali gépen (lg) egymás mellett jelenik meg!</li>
+                        <li>Hozz létre egy olyan elrendezést, ahol az egyik oszlop dupla szélességű, mint a többi!</li>
+                        <li>Készíts egy beágyazott grid rendszert, ahol a fő oszlopokban további oszlopok találhatók!</li>
+                        <li>Hozz létre egy olyan elrendezést, ahol az egyik oszlop középre van igazítva offset használatával!</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
 </html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Kurzus - Gombok és Űrlapok</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bootstrap Kurzus</h1>
+        <p>Tanuld meg a gombok és űrlapok létrehozását és formázását!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrapba</a></li>
+                    <li><a href="chapter2.html">A Bootstrap Rácsrendszere</a></li>
+                    <li><a href="chapter3.html">Táblázatok és Formázás</a></li>
+                    <li><a href="chapter4.html" class="active">Gombok és Űrlapok</a></li>
+                    <li><a href="chapter5.html">Navigációs elemek</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>4. Gombok és Űrlapok</h2>
+                
+                <h3>Gombok használata</h3>
+                <p>A gombok interakciókat biztosítanak a felhasználó számára, például egy űrlap beküldésére vagy egy esemény indítására. Egy alap HTML gomb így néz ki:</p>
+                <pre><code>&lt;button&gt;Kattints ide!&lt;/button&gt;</code></pre>
+                
+                <h3>Gombok stílusozása</h3>
+                <p>CSS segítségével formázhatjuk a gombokat, például:</p>
+                <pre><code>button {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+}
+button:hover {
+    background-color: darkblue;
+}</code></pre>
+                <p>Ez a kód egy kék gombot hoz létre, amely sötétebbé válik, ha az egér fölé kerül.</p>
+                
+                <h3>Űrlapok létrehozása</h3>
+                <p>Az űrlapok segítségével a felhasználók adatokat küldhetnek be. Egy egyszerű HTML űrlap:</p>
+                <pre><code>&lt;form&gt;
+    &lt;label for="name"&gt;Név:&lt;/label&gt;
+    &lt;input type="text" id="name" name="name" required&gt;
+    
+    &lt;label for="email"&gt;Email:&lt;/label&gt;
+    &lt;input type="email" id="email" name="email" required&gt;
+    
+    &lt;button type="submit"&gt;Küldés&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                <p>Ez egy egyszerű űrlap név és email mezővel, valamint egy beküldő gombbal.</p>
+                
+                <h3>Űrlapelemek formázása</h3>
+                <p>A CSS segítségével az űrlapelemek megjelenése javítható:</p>
+                <pre><code>input {
+    width: 100%;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}</code></pre>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy gombot, amelyre kattintva egy JavaScript alert üzenet jelenik meg.</li>
+                    <li>Készíts egy űrlapot, amely tartalmaz egy név, email és jelszó mezőt.</li>
+                    <li>Stílusozd az űrlap elemeit, hogy jobban nézzenek ki.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

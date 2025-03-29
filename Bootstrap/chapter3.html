@@ -1,0 +1,400 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Kurzus - Tipográfiai Elemek</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #e6f2ff;
+            border: 1px solid #8bb3d9;
+        }
+        th {
+            background-color: #8bb3d9;
+            color: white;
+        }
+        .example-box {
+            background-color: #f8f9fa; 
+            padding: 15px; 
+            margin: 15px 0; 
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+        }
+        .color-example {
+            display: inline-block;
+            padding: 10px;
+            margin: 5px;
+            border-radius: 5px;
+            width: 30%;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív weboldalakat készíteni a Bootstrap 5.3 keretrendszerrel!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html" class="active">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <!-- Main Title -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>3. Tipográfiai Elemek</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>Bootstrap Tipográfia</h3>
+                <p>A Bootstrap alapértelmezett tipográfiai beállításai modern és könnyen olvasható megjelenést biztosítanak a weboldalakon. A Bootstrap 5.3-ban a tipográfia a következő alapelvekre épül:</p>
+                <ul>
+                    <li>A Bootstrap natív fontot használ a rendszerből ("native font stack")</li>
+                    <li>Az alapértelmezett betűméret 1rem (16px)</li>
+                    <li>Az alapértelmezett sormagasság 1.5</li>
+                    <li>Az alapértelmezett szövegszín változik sötét/világos mód szerint</li>
+                </ul>
+
+                <!-- Headings -->
+                <h3>Címsorok (Headings)</h3>
+                <p>A Bootstrap hat különböző címsort biztosít, amelyek megfelelnek a HTML címsorcímkéknek (h1-h6).</p>
+                
+                <div class="example-box">
+                    <h1 style="margin-top: 0;">h1. Bootstrap címsor</h1>
+                    <h2>h2. Bootstrap címsor (Weboldal css-e beka)</h2>
+                    <h3>h3. Bootstrap címsor</h3>
+                    <h4>h4. Bootstrap címsor</h4>
+                    <h5>h5. Bootstrap címsor</h5>
+                    <h6>h6. Bootstrap címsor</h6>
+                </div>
+
+                <pre><code>&lt;h1&gt;h1. Bootstrap címsor&lt;/h1&gt;
+&lt;h2&gt;h2. Bootstrap címsor&lt;/h2&gt;
+&lt;h3&gt;h3. Bootstrap címsor&lt;/h3&gt;
+&lt;h4&gt;h4. Bootstrap címsor&lt;/h4&gt;
+&lt;h5&gt;h5. Bootstrap címsor&lt;/h5&gt;
+&lt;h6&gt;h6. Bootstrap címsor&lt;/h6&gt;</code></pre>
+
+                <h4>Címsor osztályok (Heading classes)</h4>
+                <p>Ha a HTML szemantikailag egy elemet igényel, de egy másik címsor stílusát szeretnéd használni, akkor a <code>.h1</code> - <code>.h6</code> osztályokat használhatod:</p>
+
+                <pre><code>&lt;p class="h1"&gt;h1. Bootstrap címsor&lt;/p&gt;
+&lt;p class="h2"&gt;h2. Bootstrap címsor&lt;/p&gt;
+&lt;span class="h3"&gt;h3. Bootstrap címsor&lt;/span&gt;</code></pre>
+
+                <h4>Alcímek (Display headings)</h4>
+                <p>A Bootstrap 5.3 rendelkezik nagyon nagy méretű címsorral, ami figyelemfelkeltő főcímekhez használható:</p>
+                
+                <div class="example-box">
+                    <h1 class="display-1" style="margin-top: 0;">Display 1</h1>
+                    <h1 class="display-2">Display 2</h1>
+                    <h1 class="display-3">Display 3</h1>
+                    <h1 class="display-4">Display 4</h1>
+                    <h1 class="display-5">Display 5</h1>
+                    <h1 class="display-6">Display 6</h1>
+                </div>
+
+                <pre><code>&lt;h1 class="display-1"&gt;Display 1&lt;/h1&gt;
+&lt;h1 class="display-2"&gt;Display 2&lt;/h1&gt;
+&lt;h1 class="display-3"&gt;Display 3&lt;/h1&gt;
+&lt;h1 class="display-4"&gt;Display 4&lt;/h1&gt;
+&lt;h1 class="display-5"&gt;Display 5&lt;/h1&gt;
+&lt;h1 class="display-6"&gt;Display 6&lt;/h1&gt;</code></pre>
+
+                <!-- Lead Text -->
+                <h3>Kiemelt szöveg (Lead)</h3>
+                <p>A <code>.lead</code> osztály nagyobb betűméretet és sormagasságot ad a szövegnek, ami kiemeli azt a normál szöveghez képest.</p>
+                
+                <div class="example-box">
+                    <p class="lead">Ez egy kiemelt szöveg (lead). Nagyobb betűmérettel és sormagassággal rendelkezik, ami kiemelkedővé teszi a tartalmat.</p>
+                    <p>Ez egy normál bekezdés szöveg. Alapértelmezett betűmérettel és sormagassággal.</p>
+                </div>
+
+                <pre><code>&lt;p class="lead"&gt;Ez egy kiemelt szöveg (lead).&lt;/p&gt;
+&lt;p&gt;Ez egy normál bekezdés szöveg.&lt;/p&gt;</code></pre>
+
+                <!-- Text Alignment -->
+                <h3>Szöveg igazítás</h3>
+                <p>A Bootstrap szöveg igazítási osztályok segítenek a szöveg elhelyezésében:</p>
+                
+                <div class="example-box">
+                    <p class="text-start">Balra igazított szöveg.</p>
+                    <p class="text-center">Középre igazított szöveg.</p>
+                    <p class="text-end">Jobbra igazított szöveg.</p>
+                </div>
+
+                <pre><code>&lt;p class="text-start"&gt;Balra igazított szöveg.&lt;/p&gt;
+&lt;p class="text-center"&gt;Középre igazított szöveg.&lt;/p&gt;
+&lt;p class="text-end"&gt;Jobbra igazított szöveg.&lt;/p&gt;</code></pre>
+
+                <h4>Reszponzív szöveg igazítás</h4>
+                <p>Az igazítást breakpointokhoz is kötheted:</p>
+                
+                <pre><code>&lt;p class="text-sm-start text-md-center text-lg-end"&gt;
+    Ez a szöveg különböző képernyőméreteken máshogy lesz igazítva.
+&lt;/p&gt;</code></pre>
+
+                <!-- Text Decoration -->
+                <h3>Szöveg dekoráció</h3>
+                <p>A Bootstrap különféle szövegdekorációs osztályokat kínál:</p>
+                
+                <div class="example-box">
+                    <p class="text-decoration-underline">Aláhúzott szöveg</p>
+                    <p class="text-decoration-line-through">Áthúzott szöveg</p>
+                    <p class="text-decoration-none">Dekoráció nélküli szöveg (linkek esetén hasznos)</p>
+                </div>
+
+                <pre><code>&lt;p class="text-decoration-underline"&gt;Aláhúzott szöveg&lt;/p&gt;
+&lt;p class="text-decoration-line-through"&gt;Áthúzott szöveg&lt;/p&gt;
+&lt;p class="text-decoration-none"&gt;Dekoráció nélküli szöveg&lt;/p&gt;</code></pre>
+
+                <!-- Text Transform -->
+                <h3>Szöveg transzformáció</h3>
+                <p>A szöveg nagybetűssé vagy kisbetűssé alakítására szolgáló osztályok:</p>
+                
+                <div class="example-box">
+                    <p class="text-lowercase">NAGYBETŰS SZÖVEG kisbetűvé alakítva.</p>
+                    <p class="text-uppercase">Kisbetűs szöveg NAGYBETŰVÉ alakítva.</p>
+                    <p class="text-capitalize">minden szó nagybetűvel kezdődik ebben a szövegben.</p>
+                </div>
+
+                <pre><code>&lt;p class="text-lowercase"&gt;NAGYBETŰS SZÖVEG&lt;/p&gt;
+&lt;p class="text-uppercase"&gt;Kisbetűs szöveg&lt;/p&gt;
+&lt;p class="text-capitalize"&gt;minden szó nagybetűvel kezdődik&lt;/p&gt;</code></pre>
+
+                <!-- Font Weight and Italics -->
+                <h3>Betűvastagság és dőlt betű</h3>
+                <p>A Bootstrap különböző betűvastagságokat és dőlt betűket biztosít:</p>
+                
+                <div class="example-box">
+                    <p class="fw-bold">Vastag szöveg</p>
+                    <p class="fw-bolder">Vastagabb szöveg</p>
+                    <p class="fw-normal">Normál szöveg</p>
+                    <p class="fw-light">Vékony szöveg</p>
+                    <p class="fw-lighter">Vékonyabb szöveg</p>
+                    <p class="fst-italic">Dőlt betűs szöveg</p>
+                    <p class="fst-normal">Normál stílusú szöveg</p>
+                </div>
+
+                <pre><code>&lt;p class="fw-bold"&gt;Vastag szöveg&lt;/p&gt;
+&lt;p class="fw-bolder"&gt;Vastagabb szöveg&lt;/p&gt;
+&lt;p class="fw-normal"&gt;Normál szöveg&lt;/p&gt;
+&lt;p class="fw-light"&gt;Vékony szöveg&lt;/p&gt;
+&lt;p class="fw-lighter"&gt;Vékonyabb szöveg&lt;/p&gt;
+&lt;p class="fst-italic"&gt;Dőlt betűs szöveg&lt;/p&gt;
+&lt;p class="fst-normal"&gt;Normál stílusú szöveg&lt;/p&gt;</code></pre>
+
+                <!-- Text Colors -->
+                <h3>Szövegszínek</h3>
+                <p>A Bootstrap előre definiált szövegszín osztályokat kínál, amelyek a téma színeit használják:</p>
+                
+                <div class="example-box">
+                    <div class="color-example text-primary">Primary</div>
+                    <div class="color-example text-secondary">Secondary</div>
+                    <div class="color-example text-success">Success</div>
+                    <div class="color-example text-danger">Danger</div>
+                    <div class="color-example text-warning">Warning</div>
+                    <div class="color-example text-info">Info</div>
+                    <div class="color-example text-light bg-dark">Light</div>
+                    <div class="color-example text-dark">Dark</div>
+                    <div class="color-example text-body">Body</div>
+                    <div class="color-example text-muted">Muted</div>
+                    <div class="color-example text-white bg-dark">White</div>
+                </div>
+
+                <pre><code>&lt;p class="text-primary"&gt;Primary szöveg&lt;/p&gt;
+&lt;p class="text-secondary"&gt;Secondary szöveg&lt;/p&gt;
+&lt;p class="text-success"&gt;Success szöveg&lt;/p&gt;
+&lt;p class="text-danger"&gt;Danger szöveg&lt;/p&gt;
+&lt;p class="text-warning"&gt;Warning szöveg&lt;/p&gt;
+&lt;p class="text-info"&gt;Info szöveg&lt;/p&gt;
+&lt;p class="text-light bg-dark"&gt;Light szöveg&lt;/p&gt;
+&lt;p class="text-dark"&gt;Dark szöveg&lt;/p&gt;
+&lt;p class="text-body"&gt;Body szöveg&lt;/p&gt;
+&lt;p class="text-muted"&gt;Muted szöveg&lt;/p&gt;
+&lt;p class="text-white bg-dark"&gt;White szöveg&lt;/p&gt;</code></pre>
+
+                <!-- Lists -->
+                <h3>Listák</h3>
+                <p>A Bootstrap különböző listaformázási lehetőségeket kínál:</p>
+                
+                <h4>Rendezett és rendezetlen listák</h4>
+                <div class="example-box">
+                    <ul>
+                        <li>Ez egy alapértelmezett rendezetlen lista</li>
+                        <li>
+                            Belső lista ponttal
+                            <ul>
+                                <li>Almafa</li>
+                                <li>Körtefa</li>
+                            </ul>
+                        </li>
+                        <li>Harmadik elem</li>
+                    </ul>
+
+                    <ol>
+                        <li>Ez egy alapértelmezett számozott lista</li>
+                        <li>Második elem</li>
+                        <li>Harmadik elem</li>
+                    </ol>
+                </div>
+
+                <h4>Lista stílus nélküli lista</h4>
+                <div class="example-box">
+                    <ul class="list-unstyled">
+                        <li>Ez egy stílus nélküli lista</li>
+                        <li>Nincs pontjelzés</li>
+                        <li>
+                            Belső listák érintetlenek maradnak
+                            <ul>
+                                <li>Almafa</li>
+                                <li>Körtefa</li>
+                            </ul>
+                        </li>
+                    </ul>
+                </div>
+
+                <pre><code>&lt;ul class="list-unstyled"&gt;
+    &lt;li&gt;Ez egy stílus nélküli lista&lt;/li&gt;
+    &lt;li&gt;Nincs pontjelzés&lt;/li&gt;
+    &lt;li&gt;
+        Belső listák érintetlenek maradnak
+        &lt;ul&gt;
+            &lt;li&gt;Almafa&lt;/li&gt;
+            &lt;li&gt;Körtefa&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <h4>Inline lista</h4>
+                <div class="example-box">
+                    <ul class="list-inline">
+                        <li class="list-inline-item">Ez egy</li>
+                        <li class="list-inline-item">vízszintes</li>
+                        <li class="list-inline-item">lista</li>
+                    </ul>
+                </div>
+
+                <pre><code>&lt;ul class="list-inline"&gt;
+    &lt;li class="list-inline-item"&gt;Ez egy&lt;/li&gt;
+    &lt;li class="list-inline-item"&gt;vízszintes&lt;/li&gt;
+    &lt;li class="list-inline-item"&gt;lista&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <!-- Blockquotes -->
+                <h3>Idézetek (Blockquote)</h3>
+                <p>A Bootstrap stílusos idézetekhez kínál formázási lehetőségeket:</p>
+                
+                <div class="example-box">
+                    <blockquote class="blockquote">
+                        <p>A tanulás olyan, mint az evezés árral szemben: ha nem haladsz előre, visszafelé sodródsz.</p>
+                        <footer class="blockquote-footer">Kínai közmondás</footer>
+                    </blockquote>
+                </div>
+
+                <pre><code>&lt;blockquote class="blockquote"&gt;
+    &lt;p&gt;A tanulás olyan, mint az evezés árral szemben: ha nem haladsz előre, visszafelé sodródsz.&lt;/p&gt;
+    &lt;footer class="blockquote-footer"&gt;Kínai közmondás&lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
+
+                <h4>Idézet igazítása</h4>
+                <div class="example-box">
+                    <blockquote class="blockquote text-center">
+                        <p>A középre igazított idézet nagyobb figyelmet kelt.</p>
+                        <footer class="blockquote-footer">Webfejlesztői bölcsesség</footer>
+                    </blockquote>
+                </div>
+
+                <pre><code>&lt;blockquote class="blockquote text-center"&gt;
+    &lt;p&gt;A középre igazított idézet nagyobb figyelmet kelt.&lt;/p&gt;
+    &lt;footer class="blockquote-footer"&gt;Webfejlesztői bölcsesség&lt;/footer&gt;
+&lt;/blockquote&gt;</code></pre>
+
+                <!-- Abbreviations -->
+                <h3>Rövidítések</h3>
+                <p>A Bootstrap stílust ad a HTML <code>&lt;abbr&gt;</code> elemhez:</p>
+                
+                <div class="example-box">
+                    <p><abbr title="HyperText Markup Language">HTML</abbr> a weboldalak struktúrájának leírására szolgáló nyelv.</p>
+                    <p><abbr title="Cascading Style Sheets" class="initialism">CSS</abbr> a weboldal megjelenésének szabályozására szolgál.</p>
+                </div>
+
+                <pre><code>&lt;p&gt;&lt;abbr title="HyperText Markup Language"&gt;HTML&lt;/abbr&gt; a weboldalak struktúrájának leírására szolgáló nyelv.&lt;/p&gt;
+&lt;p&gt;&lt;abbr title="Cascading Style Sheets" class="initialism"&gt;CSS&lt;/abbr&gt; a weboldal megjelenésének szabályozására szolgál.&lt;/p&gt;</code></pre>
+
+                <!-- Code blocks -->
+                <h3>Kódblokkok</h3>
+                <p>A Bootstrap formázást ad a kódblokkok megjelenítéséhez:</p>
+                
+                <h4>Inline kód</h4>
+                <div class="example-box">
+                    <p>Az <code>&lt;section&gt;</code> elem egy szemantikus HTML5 elem.</p>
+                </div>
+
+                <pre><code>&lt;p&gt;Az &lt;code&gt;&amp;lt;section&amp;gt;&lt;/code&gt; elem egy szemantikus HTML5 elem.&lt;/p&gt;</code></pre>
+
+                <h4>Kódblokk</h4>
+                <div class="example-box">
+                    <pre><code>&lt;p&gt;Példa kódblokk&lt;/p&gt;
+&lt;div class="example"&gt;
+    &lt;p&gt;Ez egy példa div&lt;/p&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <pre><code>&lt;pre&gt;&lt;code&gt;&amp;lt;p&amp;gt;Példa kódblokk&amp;lt;/p&amp;gt;
+&amp;lt;div class="example"&amp;gt;
+    &amp;lt;p&amp;gt;Ez egy példa div&amp;lt;/p&amp;gt;
+&amp;lt;/div&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
+                
+                <h4>Billentyűzet gombok</h4>
+                <div class="example-box">
+                    <p>Szöveg másolásához használd a <kbd>Ctrl</kbd> + <kbd>C</kbd> billentyűkombinációt.</p>
+                </div>
+
+                <pre><code>&lt;p&gt;Szöveg másolásához használd a &lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;C&lt;/kbd&gt; billentyűkombinációt.&lt;/p&gt;</code></pre>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy oldalt, amely bemutatja az összes címsor szintet és display headinget!</li>
+                        <li>Készíts bemutató oldalt, ahol különböző szövegszíneket, igazításokat és betűvastagságokat használsz!</li>
+                        <li>Hozz létre egy oldalt, amely tartalmaz rendezett, rendezetlen és inline listákat!</li>
+                        <li>Készíts egy elegáns idézetet blockquote használatával, és formázd középre igazítva!</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

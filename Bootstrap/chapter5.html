@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap Kurzus - Navigációs elemek</title>
+    <link rel="stylesheet" href="course_styles.css">
+</head>
+<body>
+    <header>
+        <h1>Bootstrap Kurzus</h1>
+        <p>Tanuld meg, hogyan készíts professzionális navigációs menüket!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrapba</a></li>
+                    <li><a href="chapter2.html">A Bootstrap Rácsrendszere</a></li>
+                    <li><a href="chapter3.html">Táblázatok és Formázás</a></li>
+                    <li><a href="chapter4.html">Gombok és Űrlapok</a></li>
+                    <li><a href="chapter5.html" class="active">Navigációs elemek</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <h2>5. Navigációs elemek</h2>
+                
+                <h3>Miért fontos a navigáció?</h3>
+                <p>A navigáció elengedhetetlen egy weboldalon, mert segíti a felhasználókat az információ gyors elérésében. Egy jól megtervezett menü intuitív és könnyen használható.</p>
+                
+                <h3>Egyszerű navigációs sáv</h3>
+                <p>Egy alapvető navigációs sáv így néz ki HTML-ben:</p>
+                <pre><code>&lt;nav&gt;
+    &lt;ul&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Kezdőlap&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Rólunk&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Kapcsolat&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                
+                <h3>Stílusozás CSS segítségével</h3>
+                <p>A menü megjelenését CSS-sel lehet formázni:</p>
+                <pre><code>nav ul {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    background-color: #333;
+}
+nav ul li {
+    margin: 0;
+    padding: 10px 20px;
+}
+nav ul li a {
+    color: white;
+    text-decoration: none;
+}</code></pre>
+                <p>Ez egy vízszintes, sötét hátterű menüt eredményez, amely jól látható és könnyen használható.</p>
+                
+                <h3>Reszponzív navigáció</h3>
+                <p>Ahhoz, hogy a navigáció mobilbarát legyen, használhatunk CSS média lekérdezéseket:</p>
+                <pre><code>@media (max-width: 768px) {
+    nav ul {
+        flex-direction: column;
+    }
+}</code></pre>
+                <p>Ez a kód a navigációs elemeket egymás alá rendezi kis képernyőkön.</p>
+                
+                <h3>Gyakorló Feladatok:</h3>
+                <ol>
+                    <li>Hozz létre egy új navigációs menüt legalább 4 menüponttal.</li>
+                    <li>Stílusozd a menüt, hogy vizuálisan kiemelkedjen.</li>
+                    <li>Adj hozzá egy hamburger menüt kis képernyőkre.</li>
+                </ol>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
