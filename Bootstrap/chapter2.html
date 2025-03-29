@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Bootstrap Kurzus - Grid rendszer</title>
+		<link rel="stylesheet" href="course_styles.css" />
+	</head>
+	<body>
+		<header>
+			<h1>Bootstrap Grid Rendszer</h1>
+			<p>Hogyan építsünk reszponzív elrendezéseket a Bootstrap segítségével?</p>
+		</header>
+
+		<main>
+			<aside class="sidebar">
+				<nav>
+					<ul>
+						<li><a href="chapter1.html">Bevezetés</a></li>
+						<li><a href="chapter2.html" class="active">Grid Rendszer</a></li>
+						<li><a href="chapter3.html">Tipográfia</a></li>
+						<li><a href="chapter4.html">Komponensek</a></li>
+						<li><a href="chapter5.html">Űrlapok</a></li>
+                        <li><a href="chapter9.html">Projekt: Saját Weboldal</a></li>
+					</ul>
+				</nav>
+			</aside>
+			<section class="content">
+				<article class="chapter">
+					<h2>2. Grid Rendszer és Layout</h2>
+
+					<h3>Mi az a Bootstrap Grid rendszer?</h3>
+					<p>
+						A Bootstrap egy 12 oszlopos rácsrendszert (grid system) használ,
+						amely lehetővé teszi reszponzív elrendezések létrehozását könnyedén.
+					</p>
+
+					<h3>Konténerek és sorok</h3>
+					<p>
+						A Bootstrap rácsrendszerének alapja a <code>container</code> és
+						<code>row</code> osztályok:
+					</p>
+					<pre><code>
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt;Oszlop 1&lt;/div&gt;
+        &lt;div class="col"&gt;Oszlop 2&lt;/div&gt;
+        &lt;div class="col"&gt;Oszlop 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+
+					<h3>Oszlopok és felezések</h3>
+					<p>
+						Az oszlopokat a <code>col-*</code> osztályokkal szabályozhatjuk.
+						Példa két egyenlő oszlopra:
+					</p>
+					<pre><code>
+&lt;div class="row"&gt;
+    &lt;div class="col-md-6"&gt;Bal oszlop&lt;/div&gt;
+    &lt;div class="col-md-6"&gt;Jobb oszlop&lt;/div&gt;
+&lt;/div&gt;
+                </code></pre>
+
+					<h3>Reszponzív tervezés alapjai</h3>
+					<p>Használhatunk különböző méretosztályokat:</p>
+					<ul>
+						<li><code>col-sm-*</code> (kis képernyők)</li>
+						<li><code>col-md-*</code> (közepes képernyők)</li>
+						<li><code>col-lg-*</code> (nagy képernyők)</li>
+						<li><code>col-xl-*</code> (extra nagy képernyők)</li>
+					</ul>
+
+					<h3>Gyakorló Feladatok</h3>
+					<ol>
+						<li>Hozz létre egy 3 oszlopos elrendezést.</li>
+						<li>Próbáld ki a különböző méretosztályokat.</li>
+						<li>Hozz létre egy teljesen reszponzív layoutot.</li>
+					</ol>
+				</article>
+			</section>
+		</main>
+
+		<footer>
+			<p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
+		</footer>
+	</body>
+</html>
