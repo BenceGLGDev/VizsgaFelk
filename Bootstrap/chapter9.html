@@ -1,0 +1,391 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Kurzus - Reszponzív Tervezés Haladó Szinten</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #e8f4ff;
+            border: 1px solid #7bafd4;
+        }
+        th {
+            background-color: #7bafd4;
+            color: white;
+        }
+        .code-example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 15px;
+            margin: 15px 0;
+        }
+        .result-preview {
+            border: 1px dashed #6c757d;
+            padding: 15px;
+            margin: 15px 0;
+            background-color: #f8f9fa;
+        }
+        .notes {
+            background-color: #fff3cd;
+            border-left: 4px solid #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Modern, reszponzív weboldalak készítése a Bootstrap 5.3 keretrendszerrel</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Bootstrap Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html" class="active">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="https://benceglgdev.github.io/VizsgaFelk/">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <!-- Main Title with Bootstrap Logo -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>9. Reszponzív Tervezés Haladó Szinten</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>Miért fontos a haladó reszponzív tervezés?</h3>
+                <p>Napjainkban a felhasználók különböző eszközökön böngészik az internetet - mobiltelefonokon, tableteken, laptopok és asztali számítógépeken különböző képernyőméretekkel. A haladó reszponzív technikák segítenek abban, hogy weboldalunk optimálisan jelenjen meg minden eszközön.</p>
+                
+                <p>Ebben a fejezetben a Bootstrap 5.3 haladó reszponzív funkcióit és technikáit fogjuk megismerni, amelyek segítségével testre szabhatjuk a tartalom megjelenését különböző képernyőméreteken.</p>
+
+                <!-- Hiding/showing elements based on screen size -->
+                <h3>Elemek elrejtése és megjelenítése képernyőméret alapján</h3>
+                <p>A Bootstrap segítségével könnyedén elrejthetünk vagy megjeleníthetünk elemeket különböző képernyőméreteken a <code>display</code> segédosztályok használatával.</p>
+                
+                <h4>A display osztályok szerkezete:</h4>
+                <p><code>d-{breakpoint}-{value}</code></p>
+                <p>Ahol:</p>
+                <ul>
+                    <li><code>{breakpoint}</code> lehet: <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>xxl</code> (opcionális)</li>
+                    <li><code>{value}</code> lehet: <code>none</code>, <code>inline</code>, <code>inline-block</code>, <code>block</code>, <code>table</code>, <code>flex</code>, stb.</li>
+                </ul>
+
+                <div class="code-example">
+                    <pre><code>&lt;!-- Csak mobil eszközökön látható (xs) --&gt;
+&lt;div class="d-block d-sm-none"&gt;Csak mobilon látható tartalom&lt;/div&gt;
+
+&lt;!-- Elrejtve mobil eszközökön (xs), de megjelenik nagyobb képernyőkön --&gt;
+&lt;div class="d-none d-sm-block"&gt;Ez csak nagyobb képernyőkön látható&lt;/div&gt;
+
+&lt;!-- Csak közép méretű eszközökön látható (md) --&gt;
+&lt;div class="d-none d-md-block d-lg-none"&gt;Csak közép méretű képernyőkön látható&lt;/div&gt;</code></pre>
+                </div>
+
+                <div class="notes">
+                    <p><strong>Fontos:</strong> Amikor a display osztályokat használjuk, mindig a legkisebb képernyőméretet vegyük figyelembe alapértelmezettként, és onnan haladjunk felfelé a nagyobb méretek felé.</p>
+                </div>
+
+                <h4>Gyakorlati példa:</h4>
+                <p>Tegyük fel, hogy egy honlapon különböző menüt szeretnénk megjeleníteni mobilon és asztali gépeken:</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;!-- Mobil menü (hamburger ikon) --&gt;
+&lt;nav class="d-block d-md-none"&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"&gt;
+        &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;!-- Mobil menü tartalma --&gt;
+&lt;/nav&gt;
+
+&lt;!-- Asztali menü (teljes menüsor) --&gt;
+&lt;nav class="d-none d-md-block"&gt;
+    &lt;ul class="nav"&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Főoldal&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Termékek&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Rólunk&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="nav-item"&gt;&lt;a class="nav-link" href="#"&gt;Kapcsolat&lt;/a&gt;&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/nav&gt;</code></pre>
+                </div>
+
+                <!-- Order manipulation -->
+                <h3>Elemek sorrendjének módosítása</h3>
+                <p>A Bootstrap flex segédosztályai lehetővé teszik az elemek sorrendjének manipulálását különböző képernyőméreteken.</p>
+
+                <h4>Az order osztályok szintaxisa:</h4>
+                <p><code>order-{breakpoint}-{value}</code></p>
+                <p>Ahol:</p>
+                <ul>
+                    <li><code>{breakpoint}</code> lehet: <code>sm</code>, <code>md</code>, <code>lg</code>, <code>xl</code>, <code>xxl</code> (opcionális)</li>
+                    <li><code>{value}</code> lehet: 0-tól 5-ig, vagy <code>first</code> (0) és <code>last</code> (6)</li>
+                </ul>
+
+                <div class="code-example">
+                    <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;!-- Mobil eszközökön elsőként jelenik meg, asztali eszközökön másodikként --&gt;
+        &lt;div class="col-sm-4 order-1 order-md-2"&gt;
+            Első/Második elem
+        &lt;/div&gt;
+        
+        &lt;!-- Mobil eszközökön másodikként jelenik meg, asztali eszközökön elsőként --&gt;
+        &lt;div class="col-sm-4 order-2 order-md-1"&gt;
+            Második/Első elem
+        &lt;/div&gt;
+        
+        &lt;!-- Mindig harmadikként jelenik meg --&gt;
+        &lt;div class="col-sm-4 order-3"&gt;
+            Harmadik elem
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <h4>Gyakorlati példa: Tartalom átrendezése képernyőméret alapján</h4>
+                <p>Egy termékoldal esetén mobilon a termékleírás jelenjen meg előbb, nagyobb képernyőn pedig a termékképek:</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;!-- Termékképek - mobil eszközökön másodikként, asztali eszközökön elsőként --&gt;
+        &lt;div class="col-md-6 order-2 order-md-1"&gt;
+            &lt;img src="product-image.jpg" class="img-fluid" alt="Termék"&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Termékleírás - mobil eszközökön elsőként, asztali eszközökön másodikként --&gt;
+        &lt;div class="col-md-6 order-1 order-md-2"&gt;
+            &lt;h2&gt;Termék neve&lt;/h2&gt;
+            &lt;p&gt;Részletes termékleírás...&lt;/p&gt;
+            &lt;button class="btn btn-primary"&gt;Kosárba&lt;/button&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div class="notes">
+                    <p><strong>Tipp:</strong> Az order osztályok csak akkor működnek, ha az elemek ugyanabban a konténerben vannak, és a konténer <code>d-flex</code> vagy <code>d-grid</code> tulajdonsággal rendelkezik (a <code>.row</code> osztály alapértelmezetten flexbox).</p>
+                </div>
+
+                <!-- Nested grids -->
+                <h3>Beágyazott (nested) grid rendszerek</h3>
+                <p>A Bootstrap grid rendszere lehetővé teszi, hogy egy oszlopon belül újabb sorokat és oszlopokat hozzunk létre, így még komplexebb elrendezéseket készíthetünk.</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col-sm-8"&gt;
+            &lt;h3&gt;Fő tartalom&lt;/h3&gt;
+            
+            &lt;!-- Beágyazott grid a fő tartalmon belül --&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-md-6"&gt;Beágyazott tartalom 1&lt;/div&gt;
+                &lt;div class="col-md-6"&gt;Beágyazott tartalom 2&lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;div class="col-sm-4"&gt;
+            &lt;h3&gt;Oldalsáv&lt;/h3&gt;
+            &lt;p&gt;Oldalsáv tartalma...&lt;/p&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <p>A beágyazott grid-ek ugyanazokat a szabályokat követik, mint a fő grid rendszer, és ugyanúgy reagálnak a képernyőméretekre.</p>
+
+                <h4>Komplex elrendezés beágyazott grid-ekkel</h4>
+                <div class="code-example">
+                    <pre><code>&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;!-- Fejléc - teljes szélesség --&gt;
+        &lt;div class="col-12"&gt;
+            &lt;header&gt;Fejléc&lt;/header&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Fő tartalom szekció - 8/12 szélesség --&gt;
+        &lt;div class="col-md-8"&gt;
+            &lt;h2&gt;Fő tartalom&lt;/h2&gt;
+            
+            &lt;!-- Beágyazott grid a cikkekhez --&gt;
+            &lt;div class="row"&gt;
+                &lt;div class="col-sm-6"&gt;
+                    &lt;article&gt;
+                        &lt;h3&gt;Első cikk&lt;/h3&gt;
+                        &lt;p&gt;Cikk tartalma...&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+                &lt;div class="col-sm-6"&gt;
+                    &lt;article&gt;
+                        &lt;h3&gt;Második cikk&lt;/h3&gt;
+                        &lt;p&gt;Cikk tartalma...&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+            
+            &lt;!-- Második sor a beágyazott grid-ben --&gt;
+            &lt;div class="row mt-4"&gt;
+                &lt;div class="col-12"&gt;
+                    &lt;article&gt;
+                        &lt;h3&gt;Kiemelt cikk&lt;/h3&gt;
+                        &lt;p&gt;Hosszabb kiemelt cikk tartalma...&lt;/p&gt;
+                    &lt;/article&gt;
+                &lt;/div&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+        
+        &lt;!-- Oldalsáv - 4/12 szélesség --&gt;
+        &lt;div class="col-md-4"&gt;
+            &lt;aside&gt;
+                &lt;h3&gt;Oldalsáv&lt;/h3&gt;
+                
+                &lt;!-- Beágyazott tartalom az oldalsávban --&gt;
+                &lt;div class="row"&gt;
+                    &lt;div class="col-12"&gt;Widget 1&lt;/div&gt;
+                    &lt;div class="col-12 mt-3"&gt;Widget 2&lt;/div&gt;
+                &lt;/div&gt;
+            &lt;/aside&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <div class="notes">
+                    <p><strong>Megjegyzés:</strong> Amikor beágyazott grid-et használsz, nem szükséges újabb <code>.container</code> osztályt használnod, csak <code>.row</code>-t és <code>.col-*</code> osztályokat.</p>
+                </div>
+
+                <!-- Auto-layout columns -->
+                <h3>Automatikus elrendezésű oszlopok</h3>
+                <p>A Bootstrap 5.3 lehetővé teszi az automatikus oszlopméretezést, ahol nem kell meghatároznod az oszlopok pontos szélességét.</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;!-- Egyenlő szélesség --&gt;
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt;Egyenlő 1&lt;/div&gt;
+        &lt;div class="col"&gt;Egyenlő 2&lt;/div&gt;
+        &lt;div class="col"&gt;Egyenlő 3&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Egy oszlop szélesebb, a többiek egyformák --&gt;
+&lt;div class="container"&gt;
+    &lt;div class="row"&gt;
+        &lt;div class="col"&gt;Egyenlő 1&lt;/div&gt;
+        &lt;div class="col-6"&gt;Szélesebb (6/12)&lt;/div&gt;
+        &lt;div class="col"&gt;Egyenlő 2&lt;/div&gt;
+    &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <p>Az automatikus elrendezésnél az <code>.col</code> osztályok a rendelkezésre álló helyet egyenlően osztják fel, kivéve ha egy oszlopnak konkrét szélesség van megadva.</p>
+
+                <!-- Vertical alignment in rows -->
+                <h3>Függőleges igazítás a sorokban</h3>
+                <p>A Bootstrap lehetővé teszi az elemek függőleges igazítását a flexbox segítségével:</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;!-- Igazítás a sor tetejéhez --&gt;
+&lt;div class="row align-items-start"&gt;
+    &lt;div class="col"&gt;Oszlop 1&lt;/div&gt;
+    &lt;div class="col"&gt;Oszlop 2&lt;/div&gt;
+    &lt;div class="col"&gt;Oszlop 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Igazítás a sor közepéhez --&gt;
+&lt;div class="row align-items-center"&gt;
+    &lt;div class="col"&gt;Oszlop 1&lt;/div&gt;
+    &lt;div class="col"&gt;Oszlop 2&lt;/div&gt;
+    &lt;div class="col"&gt;Oszlop 3&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Igazítás a sor aljához --&gt;
+&lt;div class="row align-items-end"&gt;
+    &lt;div class="col"&gt;Oszlop 1&lt;/div&gt;
+    &lt;div class="col"&gt;Oszlop 2&lt;/div&gt;
+    &lt;div class="col"&gt;Oszlop 3&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <p>Egy adott oszlop igazítását is beállíthatod, felülírva a sor általános igazítását:</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;div class="row"&gt;
+    &lt;div class="col align-self-start"&gt;Felülre igazítva&lt;/div&gt;
+    &lt;div class="col align-self-center"&gt;Középre igazítva&lt;/div&gt;
+    &lt;div class="col align-self-end"&gt;Alulra igazítva&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <!-- Offsetting columns -->
+                <h3>Oszlopok eltolása (offset)</h3>
+                <p>Az oszlopok eltolása segít térköz létrehozásában anélkül, hogy üres oszlopokat kellene beszúrnod:</p>
+
+                <div class="code-example">
+                    <pre><code>&lt;!-- 4 egység eltolás --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-md-4"&gt;Első oszlop&lt;/div&gt;
+    &lt;div class="col-md-4 offset-md-4"&gt;Második oszlop eltolással&lt;/div&gt;
+&lt;/div&gt;
+
+&lt;!-- Reszponzív eltolás (mobilon nincs eltolás, asztali gépen van) --&gt;
+&lt;div class="row"&gt;
+    &lt;div class="col-sm-5 col-md-6"&gt;Tartalom&lt;/div&gt;
+    &lt;div class="col-sm-5 offset-sm-2 col-md-6 offset-md-0"&gt;Reszponzív eltolással&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy olyan elrendezést, ahol mobil eszközökön a navigáció alulra kerül, míg nagyobb képernyőkön felülre.</li>
+                        <li>Hozz létre egy olyan grid-et, ahol a fő tartalom és az oldalsáv felcseréli a helyét különböző képernyőméreteken.</li>
+                        <li>Készíts egy termékoldalt beágyazott grid-ekkel, ahol a termékképek és a leírás különböző méretekben eltérően rendeződnek el.</li>
+                        <li>Készíts egy olyan oldalt, ahol bizonyos elemek csak meghatározott képernyőméreteken jelennek meg.</li>
+                    </ol>
+                </div>
+
+                <!-- Summary Section -->
+                <h3>Összefoglalás</h3>
+                <p>Ebben a fejezetben megismerted a Bootstrap 5.3 haladó reszponzív funkcióit:</p>
+                <ul>
+                    <li>Elemek elrejtése és megjelenítése különböző képernyőméreteken</li>
+                    <li>Elemek sorrendjének manipulálása a flexbox segítségével</li>
+                    <li>Beágyazott grid rendszerek használata komplex elrendezésekhez</li>
+                    <li>Automatikus elrendezésű oszlopok</li>
+                    <li>Függőleges igazítás a sorokban</li>
+                    <li>Oszlopok eltolása (offset)</li>
+                </ul>
+                <p>Ezeket a technikákat kombinálva igazán professzionális és minden eszközön jól működő weboldalakat készíthetsz.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
