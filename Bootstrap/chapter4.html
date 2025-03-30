@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Kurzus - Gombok és Űrlapok</title>
+    <title>Bootstrap Kurzus - Komponensek I</title>
     <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #ffe6d5;
+            border: 1px solid #d9a58b;
+        }
+        th {
+            background-color: #d9a58b;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bootstrap Kurzus</h1>
-        <p>Tanuld meg a gombok és űrlapok létrehozását és formázását!</p>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív weboldalakat készíteni a Bootstrap keretrendszerrel!</p>
     </header>
 
     <main>
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="chapter1.html">Bevezetés a Bootstrapba</a></li>
-                    <li><a href="chapter2.html">A Bootstrap Rácsrendszere</a></li>
-                    <li><a href="chapter3.html">Táblázatok és Formázás</a></li>
-                    <li><a href="chapter4.html" class="active">Gombok és Űrlapok</a></li>
-                    <li><a href="chapter5.html">Navigációs elemek</a></li>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Bootstrap Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html" class="active">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
                     <li><a href="summary.html">Összefoglaló</a></li>
                     <li><a href="/index.html">Kezdőoldal</a></li>
                 </ul>
@@ -29,61 +51,210 @@
 
         <section class="content">
             <article class="chapter">
-                <h2>4. Gombok és Űrlapok</h2>
+                <!-- Main Title with Bootstrap Logo -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>4. Bootstrap Komponensek I</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>Bootstrap komponensek áttekintése</h3>
+                <p>A Bootstrap egyik legnagyobb előnye a kész komponensek gazdag gyűjteménye, amelyek azonnal használhatók és reszponzívak.</p>
+                <p>Ebben a fejezetben a leggyakrabban használt komponensek első csoportját ismerjük meg:</p>
+                <ul>
+                    <li>Gombok és gomb csoportok</li>
+                    <li>Navigációs sávok</li>
+                    <li>Kártyák</li>
+                </ul>
+
+                <!-- Buttons Section -->
+                <h3>Gombok (Buttons)</h3>
+                <p>A Bootstrap előre definiált gombosztályai segítségével könnyen létrehozhatunk különböző stílusú és méretű gombokat.</p>
                 
-                <h3>Gombok használata</h3>
-                <p>A gombok interakciókat biztosítanak a felhasználó számára, például egy űrlap beküldésére vagy egy esemény indítására. Egy alap HTML gomb így néz ki:</p>
-                <pre><code>&lt;button&gt;Kattints ide!&lt;/button&gt;</code></pre>
-                
-                <h3>Gombok stílusozása</h3>
-                <p>CSS segítségével formázhatjuk a gombokat, például:</p>
-                <pre><code>button {
-    background-color: blue;
-    color: white;
-    padding: 10px 20px;
-    border: none;
-    cursor: pointer;
-}
-button:hover {
-    background-color: darkblue;
-}</code></pre>
-                <p>Ez a kód egy kék gombot hoz létre, amely sötétebbé válik, ha az egér fölé kerül.</p>
-                
-                <h3>Űrlapok létrehozása</h3>
-                <p>Az űrlapok segítségével a felhasználók adatokat küldhetnek be. Egy egyszerű HTML űrlap:</p>
-                <pre><code>&lt;form&gt;
-    &lt;label for="name"&gt;Név:&lt;/label&gt;
-    &lt;input type="text" id="name" name="name" required&gt;
-    
-    &lt;label for="email"&gt;Email:&lt;/label&gt;
-    &lt;input type="email" id="email" name="email" required&gt;
-    
-    &lt;button type="submit"&gt;Küldés&lt;/button&gt;
-&lt;/form&gt;</code></pre>
-                <p>Ez egy egyszerű űrlap név és email mezővel, valamint egy beküldő gombbal.</p>
-                
-                <h3>Űrlapelemek formázása</h3>
-                <p>A CSS segítségével az űrlapelemek megjelenése javítható:</p>
-                <pre><code>input {
-    width: 100%;
-    padding: 8px;
-    margin: 5px 0;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-}</code></pre>
-                
-                <h3>Gyakorló Feladatok:</h3>
-                <ol>
-                    <li>Hozz létre egy gombot, amelyre kattintva egy JavaScript alert üzenet jelenik meg.</li>
-                    <li>Készíts egy űrlapot, amely tartalmaz egy név, email és jelszó mezőt.</li>
-                    <li>Stílusozd az űrlap elemeit, hogy jobban nézzenek ki.</li>
-                </ol>
+                <h4>Alapvető gombok</h4>
+                <pre><code>&lt;button type="button" class="btn btn-primary"&gt;Elsődleges&lt;/button&gt;
+&lt;button type="button" class="btn btn-secondary"&gt;Másodlagos&lt;/button&gt;
+&lt;button type="button" class="btn btn-success"&gt;Sikeres&lt;/button&gt;
+&lt;button type="button" class="btn btn-danger"&gt;Veszély&lt;/button&gt;
+&lt;button type="button" class="btn btn-warning"&gt;Figyelmeztetés&lt;/button&gt;
+&lt;button type="button" class="btn btn-info"&gt;Információ&lt;/button&gt;
+&lt;button type="button" class="btn btn-light"&gt;Világos&lt;/button&gt;
+&lt;button type="button" class="btn btn-dark"&gt;Sötét&lt;/button&gt;
+&lt;button type="button" class="btn btn-link"&gt;Link&lt;/button&gt;</code></pre>
+
+                <h4>Gomb méretek</h4>
+                <p>A gomb méretét a <code>btn-lg</code> vagy <code>btn-sm</code> osztályokkal módosíthatjuk:</p>
+                <pre><code>&lt;button type="button" class="btn btn-primary btn-lg"&gt;Nagy gomb&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary"&gt;Normál gomb&lt;/button&gt;
+&lt;button type="button" class="btn btn-primary btn-sm"&gt;Kis gomb&lt;/button&gt;</code></pre>
+
+                <h4>Körvonalazott gombok</h4>
+                <p>Az <code>btn-outline-*</code> osztállyal körvonalazott gombokat készíthetünk:</p>
+                <pre><code>&lt;button type="button" class="btn btn-outline-primary"&gt;Elsődleges&lt;/button&gt;
+&lt;button type="button" class="btn btn-outline-secondary"&gt;Másodlagos&lt;/button&gt;</code></pre>
+
+                <h4>Gomb csoportok</h4>
+                <p>A <code>btn-group</code> osztállyal több gombot egy csoportba rendezhetünk:</p>
+                <pre><code>&lt;div class="btn-group" role="group" aria-label="Alapvető példa"&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Bal&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Közép&lt;/button&gt;
+  &lt;button type="button" class="btn btn-primary"&gt;Jobb&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Navbar Section -->
+                <h3>Navigációs sávok (Navbars)</h3>
+                <p>A navigációs sávok a weblapok egyik legfontosabb elemei, amelyek segítségével a felhasználók könnyedén navigálhatnak az oldalon.</p>
+
+                <h4>Alapvető navigációs sáv</h4>
+                <pre><code>&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;
+  &lt;div class="container-fluid"&gt;
+    &lt;a class="navbar-brand" href="#"&gt;Weboldal neve&lt;/a&gt;
+    &lt;button class="navbar-toggler" type="button" data-bs-toggle="collapse" 
+            data-bs-target="#navbarNav" aria-controls="navbarNav" 
+            aria-expanded="false" aria-label="Toggle navigation"&gt;
+      &lt;span class="navbar-toggler-icon"&gt;&lt;/span&gt;
+    &lt;/button&gt;
+    &lt;div class="collapse navbar-collapse" id="navbarNav"&gt;
+      &lt;ul class="navbar-nav"&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link active" aria-current="page" href="#"&gt;Főoldal&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Szolgáltatások&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Rólunk&lt;/a&gt;
+        &lt;/li&gt;
+        &lt;li class="nav-item"&gt;
+          &lt;a class="nav-link" href="#"&gt;Kapcsolat&lt;/a&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;</code></pre>
+
+                <h4>Navigációs sáv színváltozatai</h4>
+                <p>A Bootstrap alapértelmezetten két színváltozatot kínál: <code>navbar-light</code> világos hátterű és <code>navbar-dark</code> sötét hátterű sávokhoz:</p>
+                <pre><code>&lt;!-- Világos navigációs sáv --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;...&lt;/nav&gt;
+
+&lt;!-- Sötét navigációs sáv --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-dark"&gt;...&lt;/nav&gt;
+
+&lt;!-- Egyedi háttérszínű navigációs sáv --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-dark bg-primary"&gt;...&lt;/nav&gt;</code></pre>
+
+                <h4>Reszponzív viselkedés</h4>
+                <p>A navigációs sáv reszponzív töréspontját a <code>navbar-expand-*</code> osztály határozza meg (sm, md, lg, xl, xxl):</p>
+                <pre><code>&lt;!-- lg képernyőméretnél nyílik ki --&gt;
+&lt;nav class="navbar navbar-expand-lg navbar-light bg-light"&gt;...&lt;/nav&gt;
+
+&lt;!-- md képernyőméretnél nyílik ki --&gt;
+&lt;nav class="navbar navbar-expand-md navbar-light bg-light"&gt;...&lt;/nav&gt;</code></pre>
+
+                <!-- Cards Section -->
+                <h3>Kártyák (Cards)</h3>
+                <p>A kártyák rugalmas tartalomelőállító komponensek, melyek segítségével rendszerezett formában jeleníthetjük meg az információkat.</p>
+
+                <h4>Alapvető kártya</h4>
+                <pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="kep.jpg" class="card-img-top" alt="Kép leírása"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Kártya címe&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Rövid leírás a kártyán belül.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Gomb&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Kártya elrendezési lehetőségek</h4>
+                <p>A kártyák különböző részeinek elhelyezése:</p>
+                <pre><code>&lt;div class="card"&gt;
+  &lt;div class="card-header"&gt;
+    Kártya fejléc
+  &lt;/div&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Különleges cím&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Elsődleges kártya szövege.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Gomb&lt;/a&gt;
+  &lt;/div&gt;
+  &lt;div class="card-footer text-muted"&gt;
+    Kártya lábléc
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Kártya csoportok</h4>
+                <p>A <code>card-group</code> osztállyal egyenlő magasságú és szélességű kártyacsoportot hozhatunk létre:</p>
+                <pre><code>&lt;div class="card-group"&gt;
+  &lt;div class="card"&gt;
+    &lt;img src="kep1.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;Első kártya&lt;/h5&gt;
+      &lt;p class="card-text"&gt;Első kártya tartalma.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+    &lt;img src="kep2.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;Második kártya&lt;/h5&gt;
+      &lt;p class="card-text"&gt;Második kártya tartalma.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="card"&gt;
+    &lt;img src="kep3.jpg" class="card-img-top" alt="..."&gt;
+    &lt;div class="card-body"&gt;
+      &lt;h5 class="card-title"&gt;Harmadik kártya&lt;/h5&gt;
+      &lt;p class="card-text"&gt;Harmadik kártya tartalma.&lt;/p&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Kártya elrendezés a grid rendszerrel</h4>
+                <p>A kártyákat a grid rendszerrel kombinálva rugalmas elrendezést érhetünk el:</p>
+                <pre><code>&lt;div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4"&gt;
+  &lt;div class="col"&gt;
+    &lt;div class="card"&gt;
+      &lt;img src="kep1.jpg" class="card-img-top" alt="..."&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Első kártya&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Első kártya tartalma.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col"&gt;
+    &lt;div class="card"&gt;
+      &lt;img src="kep2.jpg" class="card-img-top" alt="..."&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Második kártya&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Második kártya tartalma.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="col"&gt;
+    &lt;div class="card"&gt;
+      &lt;img src="kep3.jpg" class="card-img-top" alt="..."&gt;
+      &lt;div class="card-body"&gt;
+        &lt;h5 class="card-title"&gt;Harmadik kártya&lt;/h5&gt;
+        &lt;p class="card-text"&gt;Harmadik kártya tartalma.&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy oldalt, amelyen megjeleníted az összes Bootstrap gomb típust!</li>
+                        <li>Hozz létre egy reszponzív navigációs sávot, amely tartalmaz egy logót, négy menüpontot és egy keresőmezőt!</li>
+                        <li>Készíts egy termékoldalt három termék kártyával, amelyek tartalmazzák a termék nevét, leírását, árát és egy "Kosárba" gombot!</li>
+                        <li>Hozz létre egy gombcsoportot, amely tartalmaz három méretopciót (S, M, L) egy webshop számára!</li>
+                    </ol>
+                </div>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
     </footer>
 </body>
 </html>

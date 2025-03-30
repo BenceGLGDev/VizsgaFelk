@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Kurzus - Táblázatok és Listák</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #e6f2ff;
+            border: 1px solid #99c2ff;
+        }
+        th {
+            background-color: #99c2ff;
+            color: white;
+        }
+        .code-comparison {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .code-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        .example-image {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív webdesignt a világ legnépszerűbb CSS keretrendszerével!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Bootstrap Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html" class="active">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <!-- Main Title -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>6. Táblázatok és Listák</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>Táblázatok a Bootstrap 5.3-ban</h3>
+                <p>A táblázatok az adatok rendszerezett megjelenítésének alapvető eszközei. A Bootstrap több beépített osztályt kínál a táblázatok formázásához és a reszponzivitás biztosításához.</p>
+
+                <!-- Basic Tables -->
+                <h3>Alap táblázat</h3>
+                <p>A Bootstrap alapvető táblázat stílusának használatához egyszerűen add hozzá a <code>table</code> osztályt a <code>&lt;table&gt;</code> elemhez:</p>
+                
+                <pre><code>&lt;table class="table"&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;Név&lt;/th&gt;
+      &lt;th&gt;Email&lt;/th&gt;
+      &lt;th&gt;Szerepkör&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;1&lt;/td&gt;
+      &lt;td&gt;Nagy János&lt;/td&gt;
+      &lt;td&gt;janos@pelda.hu&lt;/td&gt;
+      &lt;td&gt;Admin&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;2&lt;/td&gt;
+      &lt;td&gt;Kiss Éva&lt;/td&gt;
+      &lt;td&gt;eva@pelda.hu&lt;/td&gt;
+      &lt;td&gt;Felhasználó&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+                <!-- Table Variants -->
+                <h3>Táblázat variációk</h3>
+                <p>A Bootstrap különböző táblázat stílusokat kínál, amelyek a <code>table</code> osztály mellett használhatók:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Osztály</th>
+                            <th>Leírás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>table-striped</code></td>
+                            <td>Váltakozó színű sorokat ad a táblázatnak, megkönnyítve az olvashatóságot.</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-bordered</code></td>
+                            <td>Keretet ad minden cellához a táblázatban.</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-hover</code></td>
+                            <td>Kiemelő effektet ad az egérrel rámutatott soroknak.</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-sm</code></td>
+                            <td>Kompaktabb táblázatot eredményez kisebb padding értékekkel.</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-dark</code></td>
+                            <td>Sötét háttérrel és világos szöveggel jeleníti meg a táblázatot.</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Ezek az osztályok kombinálhatók is. Például:</p>
+                <pre><code>&lt;table class="table table-striped table-hover table-bordered"&gt;
+  &lt;!-- táblázat tartalma --&gt;
+&lt;/table&gt;</code></pre>
+
+                <!-- Contextual Classes -->
+                <h3>Kontextuális osztályok táblázatokhoz</h3>
+                <p>Kontextuális osztályokkal kiemelheted a táblázat egyes sorait vagy celláit:</p>
+                
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Osztály</th>
+                            <th>Leírás</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><code>table-primary</code></td>
+                            <td>Kék kiemelés (elsődleges szín)</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-secondary</code></td>
+                            <td>Szürke kiemelés (másodlagos szín)</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-success</code></td>
+                            <td>Zöld kiemelés (siker jelzése)</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-danger</code></td>
+                            <td>Piros kiemelés (veszély/hiba jelzése)</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-warning</code></td>
+                            <td>Sárga kiemelés (figyelmeztetés)</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-info</code></td>
+                            <td>Világoskék kiemelés (információ)</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-light</code></td>
+                            <td>Világos háttér</td>
+                        </tr>
+                        <tr>
+                            <td><code>table-dark</code></td>
+                            <td>Sötét háttér</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <p>Ezeket az osztályokat használhatod a <code>&lt;tr&gt;</code>, <code>&lt;th&gt;</code> vagy <code>&lt;td&gt;</code> elemeken:</p>
+
+                <pre><code>&lt;tr class="table-success"&gt;
+  &lt;td&gt;Sikeres művelet&lt;/td&gt;
+  &lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr&gt;
+  &lt;td class="table-danger"&gt;Hibás adat&lt;/td&gt;
+  &lt;td&gt;...&lt;/td&gt;
+&lt;/tr&gt;</code></pre>
+
+                <!-- Responsive Tables -->
+                <h3>Reszponzív táblázatok</h3>
+                <p>A Bootstrap lehetővé teszi a táblázatok reszponzívvá tételét is. Ehhez csomagold a táblázatot egy <code>.table-responsive</code> osztályú <code>div</code> elembe:</p>
+
+                <pre><code>&lt;div class="table-responsive"&gt;
+  &lt;table class="table"&gt;
+    &lt;!-- táblázat tartalma --&gt;
+  &lt;/table&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Töréspontok szerint is meghatározhatod a reszponzivitást:</p>
+                <ul>
+                    <li><code>table-responsive-sm</code>: csak kisebb képernyőkön (576px alatt) görget</li>
+                    <li><code>table-responsive-md</code>: 768px alatt</li>
+                    <li><code>table-responsive-lg</code>: 992px alatt</li>
+                    <li><code>table-responsive-xl</code>: 1200px alatt</li>
+                    <li><code>table-responsive-xxl</code>: 1400px alatt</li>
+                </ul>
+
+                <!-- Table Head Options -->
+                <h3>Táblázat fejléc opciók</h3>
+                <p>A <code>thead-light</code> és <code>thead-dark</code> osztályokkal formázhatod a táblázat fejlécét:</p>
+
+                <pre><code>&lt;table class="table"&gt;
+  &lt;thead class="thead-dark"&gt;
+    &lt;tr&gt;
+      &lt;th&gt;#&lt;/th&gt;
+      &lt;th&gt;Név&lt;/th&gt;
+      &lt;!-- további fejléc cellák --&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;!-- táblázat sorai --&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+
+                <!-- List Groups -->
+                <h3>Lista csoportok (List Groups)</h3>
+                <p>A Bootstrap lista csoportjai rugalmas és hatékony komponensek, amelyek segítségével rendszerezett listákat, navigációt vagy akár komplexebb tartalmakat jeleníthetsz meg.</p>
+
+                <h4>Alapvető lista csoport</h4>
+                <pre><code>&lt;ul class="list-group"&gt;
+  &lt;li class="list-group-item"&gt;Első elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Második elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Harmadik elem&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <h4>Aktív és letiltott elemek</h4>
+                <pre><code>&lt;ul class="list-group"&gt;
+  &lt;li class="list-group-item active"&gt;Aktív elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Normál elem&lt;/li&gt;
+  &lt;li class="list-group-item disabled"&gt;Letiltott elem&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <!-- List Group Variants -->
+                <h3>Lista csoport variációk</h3>
+                
+                <h4>Linkek és gombok lista csoportban</h4>
+                <p>Használhatsz <code>&lt;a&gt;</code> vagy <code>&lt;button&gt;</code> elemeket is <code>&lt;li&gt;</code> helyett:</p>
+
+                <pre><code>&lt;div class="list-group"&gt;
+  &lt;a href="#" class="list-group-item list-group-item-action active"&gt;Aktív link&lt;/a&gt;
+  &lt;a href="#" class="list-group-item list-group-item-action"&gt;Link elem&lt;/a&gt;
+  &lt;button type="button" class="list-group-item list-group-item-action"&gt;Gomb elem&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Kontextuális osztályok lista csoporthoz</h4>
+                <p>A táblázatokhoz hasonlóan a lista csoportok is használhatnak színkódolást:</p>
+
+                <pre><code>&lt;ul class="list-group"&gt;
+  &lt;li class="list-group-item list-group-item-primary"&gt;Elsődleges&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-secondary"&gt;Másodlagos&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-success"&gt;Siker&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-danger"&gt;Veszély&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-warning"&gt;Figyelmeztetés&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-info"&gt;Információ&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-light"&gt;Világos&lt;/li&gt;
+  &lt;li class="list-group-item list-group-item-dark"&gt;Sötét&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <h4>Keret nélküli lista</h4>
+                <p>Az <code>list-group-flush</code> osztállyal keret nélküli lista csoportot készíthetsz:</p>
+
+                <pre><code>&lt;ul class="list-group list-group-flush"&gt;
+  &lt;li class="list-group-item"&gt;Első elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Második elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Harmadik elem&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <h4>Vízszintes lista csoport</h4>
+                <p>A <code>list-group-horizontal</code> osztállyal vízszintes elrendezésű lista csoportot készíthetsz:</p>
+
+                <pre><code>&lt;ul class="list-group list-group-horizontal"&gt;
+  &lt;li class="list-group-item"&gt;Első elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Második elem&lt;/li&gt;
+  &lt;li class="list-group-item"&gt;Harmadik elem&lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <p>Töréspontokat is használhatsz a lista vízszintes elrendezéséhez:</p>
+                <ul>
+                    <li><code>list-group-horizontal-sm</code>: 576px felett</li>
+                    <li><code>list-group-horizontal-md</code>: 768px felett</li>
+                    <li><code>list-group-horizontal-lg</code>: 992px felett</li>
+                    <li><code>list-group-horizontal-xl</code>: 1200px felett</li>
+                    <li><code>list-group-horizontal-xxl</code>: 1400px felett</li>
+                </ul>
+
+                <!-- Complex Content in List Groups -->
+                <h3>Összetett tartalom lista csoportokban</h3>
+                <p>A lista csoportokban összetettebb tartalmakat is megjeleníthetsz:</p>
+
+                <pre><code>&lt;div class="list-group"&gt;
+  &lt;a href="#" class="list-group-item list-group-item-action"&gt;
+    &lt;div class="d-flex w-100 justify-content-between"&gt;
+      &lt;h5 class="mb-1"&gt;Lista elem fejléce&lt;/h5&gt;
+      &lt;small&gt;3 napja&lt;/small&gt;
+    &lt;/div&gt;
+    &lt;p class="mb-1"&gt;Itt található a lista elem fő tartalma, ami hosszabb leírást is tartalmazhat.&lt;/p&gt;
+    &lt;small&gt;További részletek.&lt;/small&gt;
+  &lt;/a&gt;
+  &lt;!-- további lista elemek --&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Checkboxes and Radios in List Groups -->
+                <h3>Jelölőnégyzetek és rádiógombok lista csoportokban</h3>
+                <p>A Bootstrap 5.3 támogatja a jelölőnégyzetek és rádiógombok közvetlen használatát lista csoportokban:</p>
+
+                <pre><code>&lt;ul class="list-group"&gt;
+  &lt;li class="list-group-item"&gt;
+    &lt;input class="form-check-input me-1" type="checkbox" value="" id="firstCheckbox"&gt;
+    &lt;label class="form-check-label" for="firstCheckbox"&gt;Első jelölőnégyzet&lt;/label&gt;
+  &lt;/li&gt;
+  &lt;li class="list-group-item"&gt;
+    &lt;input class="form-check-input me-1" type="checkbox" value="" id="secondCheckbox"&gt;
+    &lt;label class="form-check-label" for="secondCheckbox"&gt;Második jelölőnégyzet&lt;/label&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <!-- Badges in List Groups -->
+                <h3>Jelvények lista csoportokban</h3>
+                <p>A <code>badge</code> komponenst használhatod számláló vagy státusz jelzésére lista csoportokban:</p>
+
+                <pre><code>&lt;ul class="list-group"&gt;
+  &lt;li class="list-group-item d-flex justify-content-between align-items-center"&gt;
+    Új üzenetek
+    &lt;span class="badge bg-primary rounded-pill"&gt;14&lt;/span&gt;
+  &lt;/li&gt;
+  &lt;li class="list-group-item d-flex justify-content-between align-items-center"&gt;
+    Feladatok
+    &lt;span class="badge bg-warning rounded-pill"&gt;2&lt;/span&gt;
+  &lt;/li&gt;
+&lt;/ul&gt;</code></pre>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy reszponzív, csíkozott táblázatot, amely egy osztály tanulóinak nevét, életkorát és tantárgyait tartalmazza!</li>
+                        <li>Hozz létre egy lista csoportot, amelyben a lista elemek különböző színkódolással rendelkeznek a fontosságuk alapján!</li>
+                        <li>Készíts egy táblázatot, amelyben minden sor más színű, és a fejléc sötét háttérrel rendelkezik!</li>
+                        <li>Hozz létre egy vízszintes lista csoportot, amely 768px felett vízszintesen, alatta függőlegesen jelenik meg!</li>
+                        <li>Készíts egy lista csoportot jelölőnégyzetekkel, ahol az egyik elem már előre be van jelölve!</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,365 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Kurzus - Képek és Médiaelemek</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #e6f2ff;
+            border: 1px solid #99c2ff;
+        }
+        th {
+            background-color: #99c2ff;
+            color: white;
+        }
+        .code-comparison {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+        .code-column {
+            flex: 1;
+            min-width: 300px;
+        }
+        .example-image {
+            max-width: 100%;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            padding: 5px;
+            margin: 10px 0;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív webdesignt a világ legnépszerűbb CSS keretrendszerével!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Bootstrap Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html" class="active">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="/index.html">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <!-- Main Title -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>7. Képek és Médiaelemek</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>Képek a Bootstrap 5.3-ban</h3>
+                <p>A képek és más médiaelemek elengedhetetlen részei a modern weboldalaknak. A Bootstrap 5.3 számos segédosztályt kínál, amelyek segítenek a képek és más médiaelemek megfelelő elrendezésében és formázásában.</p>
+
+                <!-- Responsive Images -->
+                <h3>Reszponzív képek</h3>
+                <p>A Bootstrap legfontosabb képkezelési tulajdonsága a reszponzivitás támogatása. Az <code>img-fluid</code> osztály hozzáadásával bármely kép automatikusan reszponzívvá válik:</p>
+                
+                <pre><code>&lt;img src="kep.jpg" class="img-fluid" alt="Reszponzív kép"&gt;</code></pre>
+
+                <p>Ez a kód a következő CSS tulajdonságokat alkalmazza a képre:</p>
+
+                <pre><code>img-fluid {
+  max-width: 100%;
+  height: auto;
+}</code></pre>
+
+                <p>Ennek eredményeként a kép sosem lesz szélesebb a szülő elemnél, mérete automatikusan igazodik a képernyő méretéhez, miközben megőrzi az eredeti képarányt.</p>
+
+                <!-- Image Thumbnails -->
+                <h3>Kép miniatűrök (Thumbnails)</h3>
+                <p>A <code>img-thumbnail</code> osztállyal keretezett, lekerekített sarkú miniatűröket készíthetsz:</p>
+
+                <pre><code>&lt;img src="kep.jpg" class="img-thumbnail" alt="Miniatűr kép"&gt;</code></pre>
+
+                <p>Ez egy vékony szürke keretet és lekerekített sarkokat ad a képhez, ami különösen hasznos galériák vagy terméklisták esetén.</p>
+
+                <!-- Image Alignment -->
+                <h3>Képek igazítása</h3>
+                <p>A Bootstrap segédosztályaival könnyen igazíthatod a képeket:</p>
+
+                <h4>Szöveg köré igazítás</h4>
+                <pre><code>&lt;img src="kep.jpg" class="float-start" alt="Balra igazított kép"&gt;
+&lt;p&gt;A szöveg a kép mellett fog megjelenni...&lt;/p&gt;
+
+&lt;img src="kep.jpg" class="float-end" alt="Jobbra igazított kép"&gt;
+&lt;p&gt;A szöveg a kép mellett fog megjelenni...&lt;/p&gt;</code></pre>
+
+                <h4>Középre igazítás</h4>
+                <pre><code>&lt;div class="text-center"&gt;
+  &lt;img src="kep.jpg" class="img-fluid" alt="Középre igazított kép"&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Blokkszintű, automatikus margókkal</h4>
+                <pre><code>&lt;img src="kep.jpg" class="d-block mx-auto" alt="Középre igazított kép"&gt;</code></pre>
+
+                <!-- Image Shapes -->
+                <h3>Kép alakzatok</h3>
+                <p>A Bootstrap 5.3-ban különböző alakzatokat adhatsz a képeknek a segédosztályok használatával:</p>
+
+                <h4>Lekerekített sarkok</h4>
+                <pre><code>&lt;img src="kep.jpg" class="rounded" alt="Lekerekített sarkú kép"&gt;</code></pre>
+
+                <h4>Kör alakú kép</h4>
+                <pre><code>&lt;img src="kep.jpg" class="rounded-circle" alt="Kör alakú kép"&gt;</code></pre>
+
+                <p>A kör alakú képeknél fontos, hogy az eredeti kép négyzet alakú legyen a legjobb eredmény érdekében.</p>
+
+                <h4>Lekerekített sarkok különböző irányokban</h4>
+                <pre><code>&lt;!-- Csak felül lekerekített --&gt;
+&lt;img src="kep.jpg" class="rounded-top" alt="Felül lekerekített kép"&gt;
+
+&lt;!-- Csak jobb oldalon lekerekített --&gt;
+&lt;img src="kep.jpg" class="rounded-end" alt="Jobb oldalon lekerekített kép"&gt;
+
+&lt;!-- Csak alul lekerekített --&gt;
+&lt;img src="kep.jpg" class="rounded-bottom" alt="Alul lekerekített kép"&gt;
+
+&lt;!-- Csak bal oldalon lekerekített --&gt;
+&lt;img src="kep.jpg" class="rounded-start" alt="Bal oldalon lekerekített kép"&gt;</code></pre>
+
+                <!-- Picture Element -->
+                <h3>Picture elem használata</h3>
+                <p>A Bootstrap jól működik a HTML5 <code>&lt;picture&gt;</code> elemmel, ami lehetővé teszi különböző képek betöltését különböző eszközökön:</p>
+
+                <pre><code>&lt;picture&gt;
+  &lt;source srcset="nagy-kep.jpg" media="(min-width: 992px)"&gt;
+  &lt;source srcset="kozepes-kep.jpg" media="(min-width: 576px)"&gt;
+  &lt;img src="kicsi-kep.jpg" class="img-fluid" alt="Reszponzív kép"&gt;
+&lt;/picture&gt;</code></pre>
+
+                <p>Ez a kód különböző képeket tölt be a képernyő méretétől függően:</p>
+                <ul>
+                    <li>992px feletti képernyőn a "nagy-kep.jpg" töltődik be</li>
+                    <li>576px és 992px között a "kozepes-kep.jpg" töltődik be</li>
+                    <li>576px alatt a "kicsi-kep.jpg" töltődik be</li>
+                </ul>
+
+                <!-- Figures -->
+                <h3>Figure elemek</h3>
+                <p>A Bootstrap megfelelő stílusokat biztosít a HTML5 <code>&lt;figure&gt;</code> elemhez, amely képek és feliratok együttes megjelenítésére szolgál:</p>
+
+                <pre><code>&lt;figure class="figure"&gt;
+  &lt;img src="kep.jpg" class="figure-img img-fluid rounded" alt="Képfelirat példa"&gt;
+  &lt;figcaption class="figure-caption text-center"&gt;Ez egy középre igazított képfelirat.&lt;/figcaption&gt;
+&lt;/figure&gt;</code></pre>
+
+                <p>A <code>figure-caption</code> a felirat szövegét formázza, és alapértelmezés szerint balra igazítja. A <code>text-center</code> vagy <code>text-end</code> osztályokkal változtathatod az igazítást.</p>
+
+                <h4>Feliratok szövegszínének módosítása</h4>
+                <pre><code>&lt;!-- Alapértelmezett (szürke) felirat --&gt;
+&lt;figcaption class="figure-caption"&gt;Alapértelmezett szürke szöveg&lt;/figcaption&gt;
+
+&lt;!-- Fehér felirat sötét háttéren --&gt;
+&lt;figcaption class="figure-caption text-white"&gt;Fehér szöveg&lt;/figcaption&gt;</code></pre>
+
+                <!-- Images in Cards -->
+                <h3>Képek kártyákban</h3>
+                <p>A Bootstrap kártya (card) komponense kiválóan alkalmas képek és kapcsolódó tartalmak megjelenítésére:</p>
+
+                <pre><code>&lt;div class="card" style="width: 18rem;"&gt;
+  &lt;img src="kep.jpg" class="card-img-top" alt="Kártya kép"&gt;
+  &lt;div class="card-body"&gt;
+    &lt;h5 class="card-title"&gt;Kártya címe&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Ez egy példa szöveg a kártyához kapcsolódóan.&lt;/p&gt;
+    &lt;a href="#" class="btn btn-primary"&gt;Gomb&lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>A <code>card-img-top</code> osztály a képet a kártya tetejére helyezi. Használhatod a <code>card-img-bottom</code> osztályt is, ha a képet a kártya aljára szeretnéd helyezni.</p>
+
+                <h4>Kép kártya háttérként</h4>
+                <pre><code>&lt;div class="card text-white"&gt;
+  &lt;img src="hatter-kep.jpg" class="card-img" alt="Háttérkép"&gt;
+  &lt;div class="card-img-overlay"&gt;
+    &lt;h5 class="card-title"&gt;Kártya címe&lt;/h5&gt;
+    &lt;p class="card-text"&gt;Ez a szöveg a kép felett jelenik meg.&lt;/p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Itt a <code>card-img-overlay</code> osztály lehetővé teszi, hogy a kártya tartalma a kép fölött jelenjen meg.</p>
+
+                <!-- Video Embedding -->
+                <h3>Videók beágyazása</h3>
+                <p>A Bootstrap reszponzív segédosztályokat kínál videók beágyazásához is:</p>
+
+                <h4>Reszponzív videó beágyazása</h4>
+                <pre><code>&lt;div class="ratio ratio-16x9"&gt;
+  &lt;iframe src="https://www.youtube.com/embed/zpOULjyy-n8" title="YouTube videó" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>A <code>ratio</code> osztály és annak változatai biztosítják, hogy a beágyazott tartalom megtartsa a megfelelő képarányt, miközben reszponzív módon méretezik.</p>
+
+                <h4>Különböző képarányok</h4>
+                <p>A Bootstrap különböző képarányokat támogat:</p>
+                <ul>
+                    <li><code>ratio-1x1</code>: Négyzet alakú (1:1)</li>
+                    <li><code>ratio-4x3</code>: Klasszikus TV (4:3)</li>
+                    <li><code>ratio-16x9</code>: Szélesvásznú (16:9)</li>
+                    <li><code>ratio-21x9</code>: Ultraszéles (21:9)</li>
+                </ul>
+
+                <pre><code>&lt;!-- 4:3 képarányú videó --&gt;
+&lt;div class="ratio ratio-4x3"&gt;
+  &lt;iframe src="https://www.youtube.com/embed/zpOULjyy-n8" title="YouTube videó" allowfullscreen&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Custom Ratios -->
+                <h3>Egyéni képarányok</h3>
+                <p>Ha egyéni képarányt szeretnél használni, azt egyszerűen megteheted saját CSS stílusokkal:</p>
+
+                <pre><code>&lt;div class="ratio" style="--bs-aspect-ratio: 50%;"&gt;
+  &lt;iframe src="https://www.example.com/embed/video" title="Beágyazott videó"&gt;&lt;/iframe&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>A <code>--bs-aspect-ratio</code> CSS változó segítségével bármilyen egyéni képarányt beállíthatsz.</p>
+
+                <!-- Image Galleries -->
+                <h3>Képgalériák</h3>
+                <p>A Bootstrap grid rendszerét használhatod egyszerű, reszponzív képgalériák készítéséhez:</p>
+
+                <pre><code>&lt;div class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+      &lt;img src="kep1.jpg" class="img-fluid img-thumbnail" alt="Galéria kép 1"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+      &lt;img src="kep2.jpg" class="img-fluid img-thumbnail" alt="Galéria kép 2"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+      &lt;img src="kep3.jpg" class="img-fluid img-thumbnail" alt="Galéria kép 3"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+      &lt;img src="kep4.jpg" class="img-fluid img-thumbnail" alt="Galéria kép 4"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+      &lt;img src="kep5.jpg" class="img-fluid img-thumbnail" alt="Galéria kép 5"&gt;
+    &lt;/div&gt;
+    &lt;div class="col-md-4 mb-4"&gt;
+      &lt;img src="kep6.jpg" class="img-fluid img-thumbnail" alt="Galéria kép 6"&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Ez a kód egy 3 oszlopos galériát hoz létre közepes és nagyobb képernyőkön, míg kisebb eszközökön a képek egymás alatt fognak megjelenni.</p>
+
+                <!-- Image Lightbox (Without Extra Libraries) -->
+                <h3>Képek modális ablakok használatával</h3>
+                <p>A Bootstrap modális ablakait használhatod egyszerű lightbox hatás eléréséhez, külső könyvtárak nélkül:</p>
+
+                <pre><code>&lt;!-- Miniatűr kép, amely megnyitja a modális ablakot --&gt;
+&lt;img src="kep-kicsi.jpg" class="img-thumbnail" alt="Miniatűr kép" data-bs-toggle="modal" data-bs-target="#kepModal"&gt;
+
+&lt;!-- Modális ablak a nagyított képpel --&gt;
+&lt;div class="modal fade" id="kepModal" tabindex="-1" aria-labelledby="kepModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog modal-dialog-centered modal-lg"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-body p-0"&gt;
+        &lt;img src="kep-nagy.jpg" class="img-fluid" alt="Nagyított kép"&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Bezárás&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <p>Ebben a példában a kép miniatűrre kattintva megnyílik egy modális ablak, amely a kép nagyobb verzióját mutatja.</p>
+
+                <!-- SEO Optimization for Images -->
+                <h3>Képek SEO optimalizálása</h3>
+                <p>A képek megfelelő használata nemcsak a felhasználói élmény, hanem a keresőoptimalizálás szempontjából is fontos:</p>
+
+                <h4>Fontos gyakorlatok:</h4>
+                <ul>
+                    <li>Mindig használj leíró <code>alt</code> attribútumokat a képeken.</li>
+                    <li>Használj beszédes fájlneveket (pl. "piros-polo.jpg" jobb, mint "DSC12345.jpg").</li>
+                    <li>Optimalizáld a képek fájlméretét a gyorsabb betöltés érdekében.</li>
+                    <li>Használd a <code>&lt;picture&gt;</code> elemet vagy srcset attribútumot különböző felbontásokhoz.</li>
+                    <li>Lazy loading használata a nagy képgalériáknál: <code>&lt;img loading="lazy" ...&gt;</code></li>
+                </ul>
+
+                <!-- Image Filters with CSS -->
+                <h3>Képszűrők CSS-sel</h3>
+                <p>A Bootstrap nem tartalmaz beépített képszűrőket, de egyszerűen létrehozhatsz saját CSS osztályokat erre a célra:</p>
+
+                <pre><code>&lt;style&gt;
+/* Szürkeárnyalatos szűrő */
+.filter-grayscale {
+  filter: grayscale(100%);
+}
+
+/* Szépia szűrő */
+.filter-sepia {
+  filter: sepia(100%);
+}
+
+/* Fényerő módosítás */
+.filter-brightness {
+  filter: brightness(150%);
+}
+
+/* Kontraszt módosítás */
+.filter-contrast {
+  filter: contrast(200%);
+}
+
+/* Átmenet szűrők között hover eseményre */
+.filter-transition {
+  filter: grayscale(100%);
+  transition: filter 0.3s;
+}
+.filter-transition:hover {
+  filter: grayscale(0%);
+}
+&lt;/style&gt;
+
+&lt;!-- Szűrők használata --&gt;
+&lt;img src="kep.jpg" class="img-fluid filter-grayscale" alt="Szürkeárnyalatos kép"&gt;
+&lt;img src="kep.jpg" class="img-fluid filter-transition" alt="Átmenetes szűrővel ellátott kép"&gt;</code></pre>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy reszponzív képgalériát, amely 3 oszlopos elrendezést használ nagy képernyőkön, 2 oszlopost közepes képernyőkön és 1 oszlopost mobil eszközökön!</li>
+                        <li>Hozz létre egy kártyát, amelyen a kép háttérként szolgál, és a kártya szövege a kép fölött jelenik meg!</li>
+                        <li>Ágyazz be egy YouTube videót, amely megtartja a 16:9 képarányt minden eszközön!</li>
+                        <li>Készíts egy figure elemet képfelirattal a tanfolyam témájához kapcsolódóan!</li>
+                        <li>Hozz létre egy képet, amely alapértelmezés szerint szürkeárnyalatos, de amikor az egeret fölé viszik, színessé válik (használj saját CSS-t)!</li>
+                    </ol>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>

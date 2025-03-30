@@ -3,24 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bootstrap Kurzus - Navigációs elemek</title>
+    <title>Bootstrap Kurzus - Komponensek II</title>
     <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #ffe6d5;
+            border: 1px solid #d9a58b;
+        }
+        th {
+            background-color: #d9a58b;
+            color: white;
+        }
+    </style>
 </head>
 <body>
     <header>
-        <h1>Bootstrap Kurzus</h1>
-        <p>Tanuld meg, hogyan készíts professzionális navigációs menüket!</p>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív weboldalakat készíteni a Bootstrap keretrendszerrel!</p>
     </header>
 
     <main>
         <aside class="sidebar">
             <nav>
                 <ul>
-                    <li><a href="chapter1.html">Bevezetés a Bootstrapba</a></li>
-                    <li><a href="chapter2.html">A Bootstrap Rácsrendszere</a></li>
-                    <li><a href="chapter3.html">Táblázatok és Formázás</a></li>
-                    <li><a href="chapter4.html">Gombok és Űrlapok</a></li>
-                    <li><a href="chapter5.html" class="active">Navigációs elemek</a></li>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Bootstrap Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html" class="active">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
                     <li><a href="summary.html">Összefoglaló</a></li>
                     <li><a href="/index.html">Kezdőoldal</a></li>
                 </ul>
@@ -29,60 +51,348 @@
 
         <section class="content">
             <article class="chapter">
-                <h2>5. Navigációs elemek</h2>
+                <!-- Main Title with Bootstrap Logo -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>5. Bootstrap Komponensek II</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>További Bootstrap komponensek</h3>
+                <p>Az előző fejezetben megismertük a gombok, navigációs sávok és kártyák használatát. Most folytatjuk a Bootstrap komponensek felfedezését a következőkkel:</p>
+                <ul>
+                    <li>Űrlapok és űrlapelemek</li>
+                    <li>Modális ablakok és tooltipek</li>
+                    <li>Carousel és collapse komponensek</li>
+                </ul>
+
+                <!-- Forms Section -->
+                <h3>Űrlapok és űrlapelemek (Forms)</h3>
+                <p>A Bootstrap segítségével könnyen létrehozhatunk stílusos és reszponzív űrlapokat.</p>
                 
-                <h3>Miért fontos a navigáció?</h3>
-                <p>A navigáció elengedhetetlen egy weboldalon, mert segíti a felhasználókat az információ gyors elérésében. Egy jól megtervezett menü intuitív és könnyen használható.</p>
+                <h4>Alapvető űrlapelemek</h4>
+                <pre><code>&lt;form&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="emailCim" class="form-label"&gt;Email cím&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="emailCim" placeholder="pelda@domain.hu"&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="jelszo" class="form-label"&gt;Jelszó&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="jelszo"&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3 form-check"&gt;
+    &lt;input type="checkbox" class="form-check-input" id="emlekezz"&gt;
+    &lt;label class="form-check-label" for="emlekezz"&gt;Emlékezz rám&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;button type="submit" class="btn btn-primary"&gt;Bejelentkezés&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+
+                <h4>Különböző űrlapelemek</h4>
+                <pre><code>&lt;!-- Szövegmező --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="nev" class="form-label"&gt;Név&lt;/label&gt;
+  &lt;input type="text" class="form-control" id="nev"&gt;
+&lt;/div&gt;
+
+&lt;!-- Lenyíló lista (Select) --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="orszag" class="form-label"&gt;Ország&lt;/label&gt;
+  &lt;select class="form-select" id="orszag"&gt;
+    &lt;option selected&gt;Válassz országot...&lt;/option&gt;
+    &lt;option value="1"&gt;Magyarország&lt;/option&gt;
+    &lt;option value="2"&gt;Németország&lt;/option&gt;
+    &lt;option value="3"&gt;Ausztria&lt;/option&gt;
+  &lt;/select&gt;
+&lt;/div&gt;
+
+&lt;!-- Szövegterület --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label for="uzenet" class="form-label"&gt;Üzenet&lt;/label&gt;
+  &lt;textarea class="form-control" id="uzenet" rows="3"&gt;&lt;/textarea&gt;
+&lt;/div&gt;
+
+&lt;!-- Rádiógombok --&gt;
+&lt;div class="mb-3"&gt;
+  &lt;label class="form-label"&gt;Fizetési mód&lt;/label&gt;
+  &lt;div class="form-check"&gt;
+    &lt;input class="form-check-input" type="radio" name="fizetesMod" id="bankkartya" checked&gt;
+    &lt;label class="form-check-label" for="bankkartya"&gt;Bankkártya&lt;/label&gt;
+  &lt;/div&gt;
+  &lt;div class="form-check"&gt;
+    &lt;input class="form-check-input" type="radio" name="fizetesMod" id="utalas"&gt;
+    &lt;label class="form-check-label" for="utalas"&gt;Átutalás&lt;/label&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Validáció</h4>
+                <p>Bootstrap beépített validációs visszajelzést is kínál:</p>
+                <pre><code>&lt;form class="needs-validation" novalidate&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="emailValidacio" class="form-label"&gt;Email cím&lt;/label&gt;
+    &lt;input type="email" class="form-control" id="emailValidacio" required&gt;
+    &lt;div class="valid-feedback"&gt;
+      Megfelelő!
+    &lt;/div&gt;
+    &lt;div class="invalid-feedback"&gt;
+      Kérjük, adj meg egy érvényes email címet!
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class="mb-3"&gt;
+    &lt;label for="jelszoValidacio" class="form-label"&gt;Jelszó&lt;/label&gt;
+    &lt;input type="password" class="form-control" id="jelszoValidacio" required&gt;
+    &lt;div class="invalid-feedback"&gt;
+      A jelszó megadása kötelező!
+    &lt;/div&gt;
+  &lt;/div&gt;
+  &lt;button class="btn btn-primary" type="submit"&gt;Küldés&lt;/button&gt;
+&lt;/form&gt;
+
+&lt;script&gt;
+// JavaScript a validáció aktiválásához
+(function () {
+  'use strict'
+  // Összes form kiválasztása
+  var forms = document.querySelectorAll('.needs-validation')
+  // Loop, ami megakadályozza a küldést és validálja a mezőket
+  Array.prototype.slice.call(forms)
+    .forEach(function (form) {
+      form.addEventListener('submit', function (event) {
+        if (!form.checkValidity()) {
+          event.preventDefault()
+          event.stopPropagation()
+        }
+        form.classList.add('was-validated')
+      }, false)
+    })
+})()
+&lt;/script&gt;</code></pre>
+
+                <h4>Input csoportok</h4>
+                <p>Az input csoportok segítségével szövegek, ikonok vagy gombok adhatók hozzá a beviteli mezőkhöz:</p>
+                <pre><code>&lt;div class="input-group mb-3"&gt;
+  &lt;span class="input-group-text" id="basic-addon1"&gt;@&lt;/span&gt;
+  &lt;input type="text" class="form-control" placeholder="Felhasználónév" aria-label="Felhasználónév" aria-describedby="basic-addon1"&gt;
+&lt;/div&gt;
+
+&lt;div class="input-group mb-3"&gt;
+  &lt;input type="text" class="form-control" placeholder="Összeg" aria-label="Összeg"&gt;
+  &lt;span class="input-group-text"&gt;Ft&lt;/span&gt;
+&lt;/div&gt;
+
+&lt;div class="input-group mb-3"&gt;
+  &lt;input type="text" class="form-control" placeholder="Keresés" aria-label="Keresés"&gt;
+  &lt;button class="btn btn-outline-secondary" type="button"&gt;Keresés&lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- Modals and Tooltips Section -->
+                <h3>Modális ablakok és tooltipek</h3>
+                <p>A modális ablakok és tooltipek interaktív elemek, amelyek további információt vagy funkciót kínálnak a felhasználónak.</p>
+
+                <h4>Modális ablak (Modal)</h4>
+                <pre><code>&lt;!-- Gomb a modális ablak megnyitásához --&gt;
+&lt;button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#peldaModal"&gt;
+  Modális ablak megnyitása
+&lt;/button&gt;
+
+&lt;!-- Modális ablak --&gt;
+&lt;div class="modal fade" id="peldaModal" tabindex="-1" aria-labelledby="peldaModalLabel" aria-hidden="true"&gt;
+  &lt;div class="modal-dialog"&gt;
+    &lt;div class="modal-content"&gt;
+      &lt;div class="modal-header"&gt;
+        &lt;h5 class="modal-title" id="peldaModalLabel"&gt;Modális ablak címe&lt;/h5&gt;
+        &lt;button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Bezárás"&gt;&lt;/button&gt;
+      &lt;/div&gt;
+      &lt;div class="modal-body"&gt;
+        Ez a modális ablak tartalma.
+      &lt;/div&gt;
+      &lt;div class="modal-footer"&gt;
+        &lt;button type="button" class="btn btn-secondary" data-bs-dismiss="modal"&gt;Bezárás&lt;/button&gt;
+        &lt;button type="button" class="btn btn-primary"&gt;Mentés&lt;/button&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Tooltip (eszköztipp)</h4>
+                <p>A tooltipek segítségével további információt jeleníthetünk meg, amikor a felhasználó egy elem fölé viszi az egeret:</p>
+                <pre><code>&lt;button type="button" class="btn btn-secondary" 
+        data-bs-toggle="tooltip" data-bs-placement="top" 
+        title="Ez egy tooltip szövege"&gt;
+  Tooltip felül
+&lt;/button&gt;
+
+&lt;button type="button" class="btn btn-secondary" 
+        data-bs-toggle="tooltip" data-bs-placement="right" 
+        title="Ez egy tooltip szövege"&gt;
+  Tooltip jobbra
+&lt;/button&gt;
+
+&lt;script&gt;
+// Tooltipek inicializálása
+var tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+var tooltipList = tooltipTriggerList.map(function (tooltipTriggerEl) {
+  return new bootstrap.Tooltip(tooltipTriggerEl)
+})
+&lt;/script&gt;</code></pre>
+
+                <h4>Popover</h4>
+                <p>A popoverek a tooltipekhez hasonlóak, de több információt tartalmazhatnak:</p>
+                <pre><code>&lt;button type="button" class="btn btn-lg btn-danger" 
+        data-bs-toggle="popover" 
+        title="Popover cím" 
+        data-bs-content="Itt van a popover tartalma. Több szöveget is megjeleníthet."&gt;
+  Kattints a popover megjelenítéséhez
+&lt;/button&gt;
+
+&lt;script&gt;
+// Popoverek inicializálása
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+  return new bootstrap.Popover(popoverTriggerEl)
+})
+&lt;/script&gt;</code></pre>
+
+                <!-- Carousel and Collapse Section -->
+                <h3>Carousel és collapse komponensek</h3>
+                <p>Ezek a komponensek dinamikus tartalommegjelenítést tesznek lehetővé.</p>
+
+                <h4>Carousel (forgóképes diavetítés)</h4>
+                <pre><code>&lt;div id="peldaCarousel" class="carousel slide" data-bs-ride="carousel"&gt;
+  &lt;!-- Indikátorok --&gt;
+  &lt;div class="carousel-indicators"&gt;
+    &lt;button type="button" data-bs-target="#peldaCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#peldaCarousel" data-bs-slide-to="1" aria-label="Slide 2"&gt;&lt;/button&gt;
+    &lt;button type="button" data-bs-target="#peldaCarousel" data-bs-slide-to="2" aria-label="Slide 3"&gt;&lt;/button&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Diák --&gt;
+  &lt;div class="carousel-inner"&gt;
+    &lt;div class="carousel-item active"&gt;
+      &lt;img src="slide1.jpg" class="d-block w-100" alt="Első dia"&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Első dia címe&lt;/h5&gt;
+        &lt;p&gt;Első dia leírása&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="slide2.jpg" class="d-block w-100" alt="Második dia"&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Második dia címe&lt;/h5&gt;
+        &lt;p&gt;Második dia leírása&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+    &lt;div class="carousel-item"&gt;
+      &lt;img src="slide3.jpg" class="d-block w-100" alt="Harmadik dia"&gt;
+      &lt;div class="carousel-caption d-none d-md-block"&gt;
+        &lt;h5&gt;Harmadik dia címe&lt;/h5&gt;
+        &lt;p&gt;Harmadik dia leírása&lt;/p&gt;
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;!-- Vezérlőgombok --&gt;
+  &lt;button class="carousel-control-prev" type="button" data-bs-target="#peldaCarousel" data-bs-slide="prev"&gt;
+    &lt;span class="carousel-control-prev-icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Előző&lt;/span&gt;
+  &lt;/button&gt;
+  &lt;button class="carousel-control-next" type="button" data-bs-target="#peldaCarousel" data-bs-slide="next"&gt;
+    &lt;span class="carousel-control-next-icon" aria-hidden="true"&gt;&lt;/span&gt;
+    &lt;span class="visually-hidden"&gt;Következő&lt;/span&gt;
+  &lt;/button&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Collapse (összecsukható tartalom)</h4>
+                <p>Az összecsukható tartalommal helyet takaríthatunk meg, és a felhasználókra bízhatjuk, mely tartalmat szeretnék megtekinteni:</p>
+                <pre><code>&lt;!-- Egyszerű collapse --&gt;
+&lt;p&gt;
+  &lt;button class="btn btn-primary" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample"&gt;
+    Kattints a tartalom megjelenítéséhez
+  &lt;/button&gt;
+&lt;/p&gt;
+&lt;div class="collapse" id="collapseExample"&gt;
+  &lt;div class="card card-body"&gt;
+    Ez egy rejtett tartalom, ami csak akkor jelenik meg, amikor a felhasználó a gombra kattint.
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <h4>Accordion (harmonika)</h4>
+                <p>Az accordion egy speciális collapse komponens, amely több összecsukható részt tartalmaz:</p>
+                <pre><code>&lt;div class="accordion" id="peldaAccordion"&gt;
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header" id="headingOne"&gt;
+      &lt;button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne"&gt;
+        Első elem
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#peldaAccordion"&gt;
+      &lt;div class="accordion-body"&gt;
+        Ez az első elem tartalma. Alapértelmezetten nyitva van.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header" id="headingTwo"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo"&gt;
+        Második elem
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#peldaAccordion"&gt;
+      &lt;div class="accordion-body"&gt;
+        Ez a második elem tartalma.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+  
+  &lt;div class="accordion-item"&gt;
+    &lt;h2 class="accordion-header" id="headingThree"&gt;
+      &lt;button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree"&gt;
+        Harmadik elem
+      &lt;/button&gt;
+    &lt;/h2&gt;
+    &lt;div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#peldaAccordion"&gt;
+      &lt;div class="accordion-body"&gt;
+        Ez a harmadik elem tartalma.
+      &lt;/div&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+                <!-- JavaScript initialization notes -->
+                <h3>JavaScript inicializálás</h3>
+                <p>Fontos megjegyezni, hogy számos Bootstrap komponens JavaScript-et igényel a működéshez. Két módon inicializálhatjuk ezeket:</p>
                 
-                <h3>Egyszerű navigációs sáv</h3>
-                <p>Egy alapvető navigációs sáv így néz ki HTML-ben:</p>
-                <pre><code>&lt;nav&gt;
-    &lt;ul&gt;
-        &lt;li&gt;&lt;a href="#"&gt;Kezdőlap&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;Rólunk&lt;/a&gt;&lt;/li&gt;
-        &lt;li&gt;&lt;a href="#"&gt;Kapcsolat&lt;/a&gt;&lt;/li&gt;
-    &lt;/ul&gt;
-&lt;/nav&gt;</code></pre>
-                
-                <h3>Stílusozás CSS segítségével</h3>
-                <p>A menü megjelenését CSS-sel lehet formázni:</p>
-                <pre><code>nav ul {
-    list-style: none;
-    padding: 0;
-    display: flex;
-    background-color: #333;
-}
-nav ul li {
-    margin: 0;
-    padding: 10px 20px;
-}
-nav ul li a {
-    color: white;
-    text-decoration: none;
-}</code></pre>
-                <p>Ez egy vízszintes, sötét hátterű menüt eredményez, amely jól látható és könnyen használható.</p>
-                
-                <h3>Reszponzív navigáció</h3>
-                <p>Ahhoz, hogy a navigáció mobilbarát legyen, használhatunk CSS média lekérdezéseket:</p>
-                <pre><code>@media (max-width: 768px) {
-    nav ul {
-        flex-direction: column;
-    }
-}</code></pre>
-                <p>Ez a kód a navigációs elemeket egymás alá rendezi kis képernyőkön.</p>
-                
-                <h3>Gyakorló Feladatok:</h3>
-                <ol>
-                    <li>Hozz létre egy új navigációs menüt legalább 4 menüponttal.</li>
-                    <li>Stílusozd a menüt, hogy vizuálisan kiemelkedjen.</li>
-                    <li>Adj hozzá egy hamburger menüt kis képernyőkre.</li>
-                </ol>
+                <h4>1. HTML attribútumok használatával (data-* attribútumok)</h4>
+                <pre><code>&lt;button data-bs-toggle="modal" data-bs-target="#peldaModal"&gt;
+  Modális ablak megnyitása
+&lt;/button&gt;</code></pre>
+
+                <h4>2. JavaScript használatával</h4>
+                <pre><code>// Modal inicializálása
+var myModal = new bootstrap.Modal(document.getElementById('peldaModal'))
+
+// Modal megjelenítése
+myModal.show()
+
+// Modal elrejtése
+myModal.hide()</code></pre>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Készíts egy regisztrációs űrlapot, amely tartalmaz szövegmezőket, jelszómezőt, lenyíló listát és rádiógombokat!</li>
+                        <li>Hozz létre egy modális ablakot, amely egy termék részletes információit jeleníti meg, amikor a felhasználó a "Részletek" gombra kattint!</li>
+                        <li>Készíts egy képgalériát carousel komponens segítségével, amely automatikusan vált a képek között!</li>
+                        <li>Hozz létre egy GYIK (Gyakran Ismételt Kérdések) oldalt accordion komponens segítségével!</li>
+                        <li>Adj tooltip magyarázatokat egy űrlap mezőihez, amelyek segítenek a felhasználónak megérteni, mit kell beírnia!</li>
+                    </ol>
+                </div>
             </article>
         </section>
     </main>
 
     <footer>
-        <p>&copy; 2025 Bootstrap Kurzus. Minden jog fenntartva.</p>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
     </footer>
 </body>
 </html>
