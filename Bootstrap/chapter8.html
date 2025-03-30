@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bootstrap 5.3 Kurzus - Segédprogramok és Segédosztályok</title>
+    <link rel="stylesheet" href="course_styles.css">
+    <style>
+        table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 15px 10px;
+        }
+        th, td {
+            padding: 10px;
+            text-align: left;
+            background-color: #e7f5ff;
+            border: 1px solid #7ab5e6;
+        }
+        th {
+            background-color: #7ab5e6;
+            color: white;
+        }
+        .code-example {
+            background-color: #f8f9fa;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .result-preview {
+            background-color: #fff;
+            border: 1px solid #dee2e6;
+            border-radius: 4px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+        }
+        .utility-box {
+            display: inline-block;
+            width: 100px;
+            height: 100px;
+            margin: 10px;
+            text-align: center;
+            line-height: 100px;
+            border: 1px solid #dee2e6;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Bootstrap 5.3 Kurzus</h1>
+        <p>Tanulj meg reszponzív webfejlesztést a világ egyik legnépszerűbb CSS keretrendszerével!</p>
+    </header>
+
+    <main>
+        <aside class="sidebar">
+            <nav>
+                <ul>
+                    <li><a href="chapter1.html">Bevezetés a Bootstrap 5.3-ba</a></li>
+                    <li><a href="chapter2.html">Bootstrap Container és Grid Rendszer</a></li>
+                    <li><a href="chapter3.html">Tipográfiai Elemek</a></li>
+                    <li><a href="chapter4.html">Bootstrap Komponensek I</a></li>
+                    <li><a href="chapter5.html">Bootstrap Komponensek II</a></li>
+                    <li><a href="chapter6.html">Táblázatok és Listák</a></li>
+                    <li><a href="chapter7.html">Képek és Médiaelemek</a></li>
+                    <li><a href="chapter8.html" class="active">Segédprogramok és Segédosztályok</a></li>
+                    <li><a href="chapter9.html">Reszponzív Tervezés Haladó Szinten</a></li>
+                    <li><a href="chapter10.html">Gyakorlati Projekt</a></li>
+                    <li><a href="summary.html">Összefoglaló</a></li>
+                    <li><a href="https://benceglgdev.github.io/VizsgaFelk/">Kezdőoldal</a></li>
+                </ul>
+            </nav>
+        </aside>
+
+        <section class="content">
+            <article class="chapter">
+                <!-- Main Title with Bootstrap Logo -->
+                <div style="display: flex; align-items: center; gap: 15px;">
+                    <h2>8. Segédprogramok és Segédosztályok</h2>
+                </div>
+
+                <!-- Introduction Section -->
+                <h3>Mi is az a Utility First megközelítés?</h3>
+                <p>A Bootstrap egyik legnagyobb erőssége a segédosztályok (utilities) gazdag gyűjteménye, amelyek lehetővé teszik a gyakori stylusok gyors alkalmazását HTML elemekre külön CSS fájlok írása nélkül.</p>
+                <p>A Bootstrap 5.3 a "utility-first" megközelítést alkalmazza, amely lehetővé teszi a fejlesztők számára, hogy közvetlenül a HTML-ben formázzák az elemeket, anélkül hogy egyedi CSS osztályokat kellene létrehozniuk.</p>
+
+                <!-- Spacing Utilities -->
+                <h3>Spacing segédosztályok (margin, padding)</h3>
+                <p>A Bootstrap egyszerű és következetes osztályrendszert kínál a térközök beállítására:</p>
+                <ul>
+                    <li><code>m-*</code> - margin</li>
+                    <li><code>p-*</code> - padding</li>
+                </ul>
+                <p>Irányok:</p>
+                <ul>
+                    <li><code>t</code> - top (felső)</li>
+                    <li><code>b</code> - bottom (alsó)</li>
+                    <li><code>s</code> - start (bal oldal LTR nyelvekben)</li>
+                    <li><code>e</code> - end (jobb oldal LTR nyelvekben)</li>
+                    <li><code>x</code> - bal és jobb</li>
+                    <li><code>y</code> - felső és alsó</li>
+                    <li>nincs prefix - mind a négy oldal</li>
+                </ul>
+                <p>Méret értékek (0-tól 5-ig, valamint auto):</p>
+                <ul>
+                    <li><code>0</code> - 0</li>
+                    <li><code>1</code> - 0.25rem (4px)</li>
+                    <li><code>2</code> - 0.5rem (8px)</li>
+                    <li><code>3</code> - 1rem (16px)</li>
+                    <li><code>4</code> - 1.5rem (24px)</li>
+                    <li><code>5</code> - 3rem (48px)</li>
+                    <li><code>auto</code> - auto</li>
+                </ul>
+                
+                <h4>Spacing példák:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="mb-4"&gt;Alsó margin: 1.5rem (24px)&lt;/div&gt;
+&lt;div class="p-3"&gt;Minden oldalon padding: 1rem (16px)&lt;/div&gt;
+&lt;div class="pt-5 pb-3"&gt;Felső padding: 3rem, alsó padding: 1rem&lt;/div&gt;
+&lt;div class="mx-auto" style="width: 200px"&gt;Vízszintesen középre igazítva&lt;/div&gt;
+&lt;div class="m-0"&gt;Nincs margin sehol&lt;/div&gt;</code></pre>
+                </div>
+
+                <!-- Display Properties -->
+                <h3>Display tulajdonságok</h3>
+                <p>A Bootstrap számos segédosztályt kínál a <code>display</code> CSS tulajdonság beállítására:</p>
+                <ul>
+                    <li><code>d-none</code> - display: none</li>
+                    <li><code>d-inline</code> - display: inline</li>
+                    <li><code>d-inline-block</code> - display: inline-block</li>
+                    <li><code>d-block</code> - display: block</li>
+                    <li><code>d-table</code> - display: table</li>
+                    <li><code>d-flex</code> - display: flex</li>
+                    <li><code>d-inline-flex</code> - display: inline-flex</li>
+                    <li><code>d-grid</code> - display: grid</li>
+                </ul>
+
+                <h4>Reszponzív display osztályok:</h4>
+                <p>A display tulajdonságok kombinálhatók a Bootstrap breakpointjaival a reszponzív viselkedés érdekében:</p>
+                <div class="code-example">
+<pre><code>&lt;div class="d-none d-md-block"&gt;
+    Ez az elem csak közepes (md) és nagyobb képernyőkön jelenik meg
+&lt;/div&gt;
+
+&lt;div class="d-block d-lg-none"&gt;
+    Ez az elem csak nagy (lg) méretnél kisebb képernyőkön jelenik meg
+&lt;/div&gt;</code></pre>
+                </div>
+                
+                <p>Közös használati esetek:</p>
+                <ul>
+                    <li>Elemek elrejtése vagy megjelenítése különböző képernyőméreteken</li>
+                    <li>Alternatív navigáció mobil eszközökön</li>
+                    <li>Különböző elrendezések használata eltérő képernyőméreteken</li>
+                </ul>
+
+                <!-- Flex Utilities -->
+                <h3>Flex segédosztályok</h3>
+                <p>A Bootstrap átfogó flex segédosztályokat kínál a flexbox CSS tulajdonságainak kezeléséhez:</p>
+                
+                <h4>Flex konténer beállítások:</h4>
+                <ul>
+                    <li><code>d-flex</code> - display: flex</li>
+                    <li><code>d-inline-flex</code> - display: inline-flex</li>
+                    <li><code>flex-row</code> - flex-direction: row</li>
+                    <li><code>flex-row-reverse</code> - flex-direction: row-reverse</li>
+                    <li><code>flex-column</code> - flex-direction: column</li>
+                    <li><code>flex-column-reverse</code> - flex-direction: column-reverse</li>
+                </ul>
+                
+                <h4>Justify Content (vízszintes igazítás):</h4>
+                <ul>
+                    <li><code>justify-content-start</code> - justify-content: flex-start</li>
+                    <li><code>justify-content-end</code> - justify-content: flex-end</li>
+                    <li><code>justify-content-center</code> - justify-content: center</li>
+                    <li><code>justify-content-between</code> - justify-content: space-between</li>
+                    <li><code>justify-content-around</code> - justify-content: space-around</li>
+                    <li><code>justify-content-evenly</code> - justify-content: space-evenly</li>
+                </ul>
+
+                <h4>Align Items (függőleges igazítás):</h4>
+                <ul>
+                    <li><code>align-items-start</code> - align-items: flex-start</li>
+                    <li><code>align-items-end</code> - align-items: flex-end</li>
+                    <li><code>align-items-center</code> - align-items: center</li>
+                    <li><code>align-items-baseline</code> - align-items: baseline</li>
+                    <li><code>align-items-stretch</code> - align-items: stretch</li>
+                </ul>
+
+                <h4>Flex példa:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="d-flex justify-content-between align-items-center"&gt;
+    &lt;div&gt;1. elem&lt;/div&gt;
+    &lt;div&gt;2. elem&lt;/div&gt;
+    &lt;div&gt;3. elem&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+                <p>Ez a példa egy flexbox konténert hoz létre, ahol az elemek vízszintesen egyenlő távolságra vannak egymástól (space-between) és függőlegesen középre vannak igazítva.</p>
+
+                <!-- Color Utilities -->
+                <h3>Szín segédosztályok</h3>
+                <p>A Bootstrap előre definiált színrendszert kínál, amelyet különböző elemekre alkalmazhatunk:</p>
+                
+                <h4>Szöveg színek:</h4>
+                <ul>
+                    <li><code>text-primary</code> - elsődleges szín</li>
+                    <li><code>text-secondary</code> - másodlagos szín</li>
+                    <li><code>text-success</code> - siker szín (általában zöld)</li>
+                    <li><code>text-danger</code> - veszély szín (általában piros)</li>
+                    <li><code>text-warning</code> - figyelmeztetés szín (általában sárga)</li>
+                    <li><code>text-info</code> - információ szín (általában világoskék)</li>
+                    <li><code>text-light</code> - világos szín</li>
+                    <li><code>text-dark</code> - sötét szín</li>
+                    <li><code>text-body</code> - alap szövegszín</li>
+                    <li><code>text-muted</code> - halványabb szövegszín</li>
+                    <li><code>text-white</code> - fehér szöveg</li>
+                    <li><code>text-black-50</code> - félig átlátszó fekete szöveg</li>
+                    <li><code>text-white-50</code> - félig átlátszó fehér szöveg</li>
+                </ul>
+
+                <h4>Háttérszínek:</h4>
+                <ul>
+                    <li><code>bg-primary</code> - elsődleges háttérszín</li>
+                    <li><code>bg-secondary</code> - másodlagos háttérszín</li>
+                    <li><code>bg-success</code> - siker háttérszín</li>
+                    <li><code>bg-danger</code> - veszély háttérszín</li>
+                    <li><code>bg-warning</code> - figyelmeztetés háttérszín</li>
+                    <li><code>bg-info</code> - információ háttérszín</li>
+                    <li><code>bg-light</code> - világos háttérszín</li>
+                    <li><code>bg-dark</code> - sötét háttérszín</li>
+                    <li><code>bg-white</code> - fehér háttér</li>
+                    <li><code>bg-transparent</code> - átlátszó háttér</li>
+                </ul>
+
+                <h4>Színkombinációk példa:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="bg-primary text-white p-3"&gt;Elsődleges háttér, fehér szöveg&lt;/div&gt;
+&lt;div class="bg-success text-white p-3"&gt;Siker háttér, fehér szöveg&lt;/div&gt;
+&lt;div class="bg-light text-dark p-3"&gt;Világos háttér, sötét szöveg&lt;/div&gt;
+&lt;span class="text-danger"&gt;Ez egy fontos figyelmeztetés&lt;/span&gt;</code></pre>
+                </div>
+
+                <!-- Sizing Utilities -->
+                <h3>Méretezési segédosztályok</h3>
+                <p>A Bootstrap segédosztályokat kínál a szélesség és magasság beállításához:</p>
+                
+                <h4>Szélesség:</h4>
+                <ul>
+                    <li><code>w-25</code> - 25% szélesség</li>
+                    <li><code>w-50</code> - 50% szélesség</li>
+                    <li><code>w-75</code> - 75% szélesség</li>
+                    <li><code>w-100</code> - 100% szélesség</li>
+                    <li><code>w-auto</code> - auto szélesség</li>
+                </ul>
+
+                <h4>Magasság:</h4>
+                <ul>
+                    <li><code>h-25</code> - 25% magasság</li>
+                    <li><code>h-50</code> - 50% magasság</li>
+                    <li><code>h-75</code> - 75% magasság</li>
+                    <li><code>h-100</code> - 100% magasság</li>
+                    <li><code>h-auto</code> - auto magasság</li>
+                </ul>
+
+                <h4>Méretezési példa:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="w-50"&gt;50% széles elem&lt;/div&gt;
+&lt;div class="w-75 h-50"&gt;75% széles és 50% magas elem&lt;/div&gt;
+&lt;img src="kep.jpg" class="w-100" alt="Reszponzív kép"&gt;</code></pre>
+                </div>
+
+                <!-- Border Utilities -->
+                <h3>Keret (border) segédosztályok</h3>
+                <p>A Bootstrap segédosztályokat kínál a keretek gyors kezeléséhez:</p>
+                
+                <h4>Alap keretek:</h4>
+                <ul>
+                    <li><code>border</code> - Keret minden oldalon</li>
+                    <li><code>border-top</code> - Keret csak felül</li>
+                    <li><code>border-end</code> - Keret csak jobbra</li>
+                    <li><code>border-bottom</code> - Keret csak alul</li>
+                    <li><code>border-start</code> - Keret csak balra</li>
+                </ul>
+
+                <h4>Keret színek:</h4>
+                <ul>
+                    <li><code>border-primary</code>, <code>border-secondary</code>, stb.</li>
+                </ul>
+
+                <h4>Keret vastagság:</h4>
+                <ul>
+                    <li><code>border-0</code> - Nincs keret</li>
+                    <li><code>border-1</code> - 1px vastag keret</li>
+                    <li><code>border-2</code> - 2px vastag keret</li>
+                    <li><code>border-3</code> - 3px vastag keret</li>
+                    <li><code>border-4</code> - 4px vastag keret</li>
+                    <li><code>border-5</code> - 5px vastag keret</li>
+                </ul>
+
+                <h4>Lekerekített sarkok:</h4>
+                <ul>
+                    <li><code>rounded</code> - Alapértelmezett lekerekítés</li>
+                    <li><code>rounded-0</code> - Nincs lekerekítés</li>
+                    <li><code>rounded-1</code> - Kicsi lekerekítés</li>
+                    <li><code>rounded-2</code> - Közepes lekerekítés</li>
+                    <li><code>rounded-3</code> - Nagy lekerekítés</li>
+                    <li><code>rounded-circle</code> - Kör alakú</li>
+                    <li><code>rounded-pill</code> - Pirula alakú</li>
+                    <li><code>rounded-top</code>, <code>rounded-end</code>, <code>rounded-bottom</code>, <code>rounded-start</code> - Csak bizonyos oldalon lekerekített</li>
+                </ul>
+
+                <h4>Keret példák:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="border border-primary p-3 mb-3"&gt;Elsődleges színű kerettel&lt;/div&gt;
+&lt;div class="border-top border-danger border-3 p-3 mb-3"&gt;Vastag vörös felső kerettel&lt;/div&gt;
+&lt;div class="border rounded-pill border-success p-2 mb-3"&gt;Pirula alakú zöld kerettel&lt;/div&gt;
+&lt;img src="profil.jpg" class="rounded-circle border border-dark" alt="Profilkép"&gt;</code></pre>
+                </div>
+
+                <!-- Shadow Utilities -->
+                <h3>Árnyék segédosztályok</h3>
+                <p>A Bootstrap árnyék segédosztályokat kínál a boxshadow alkalmazásához:</p>
+                <ul>
+                    <li><code>shadow-none</code> - Nincs árnyék</li>
+                    <li><code>shadow-sm</code> - Kis árnyék</li>
+                    <li><code>shadow</code> - Normál árnyék</li>
+                    <li><code>shadow-lg</code> - Nagy árnyék</li>
+                </ul>
+
+                <h4>Árnyék példa:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="shadow-sm p-3 mb-3 bg-white"&gt;Kis árnyékkal&lt;/div&gt;
+&lt;div class="shadow p-3 mb-3 bg-white"&gt;Normál árnyékkal&lt;/div&gt;
+&lt;div class="shadow-lg p-3 mb-3 bg-white"&gt;Nagy árnyékkal&lt;/div&gt;</code></pre>
+                </div>
+
+                <!-- Position Utilities -->
+                <h3>Pozícionálási segédosztályok</h3>
+                <p>A Bootstrap segédosztályokat kínál az elemek pozícionálásához:</p>
+                <ul>
+                    <li><code>position-static</code> - Statikus pozícionálás</li>
+                    <li><code>position-relative</code> - Relatív pozícionálás</li>
+                    <li><code>position-absolute</code> - Abszolút pozícionálás</li>
+                    <li><code>position-fixed</code> - Fix pozícionálás</li>
+                    <li><code>position-sticky</code> - Ragadós pozícionálás</li>
+                </ul>
+
+                <h4>Pozíció példa:</h4>
+                <div class="code-example">
+<pre><code>&lt;div class="position-relative" style="height: 200px;"&gt;
+    &lt;div class="position-absolute top-0 start-0"&gt;Bal felső sarok&lt;/div&gt;
+    &lt;div class="position-absolute top-0 end-0"&gt;Jobb felső sarok&lt;/div&gt;
+    &lt;div class="position-absolute bottom-0 start-0"&gt;Bal alsó sarok&lt;/div&gt;
+    &lt;div class="position-absolute bottom-0 end-0"&gt;Jobb alsó sarok&lt;/div&gt;
+    &lt;div class="position-absolute top-50 start-50 translate-middle"&gt;Középre igazítva&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+                </div>
+
+                <!-- Practice Section -->
+                <div class="practice">
+                    <h3>Gyakorló Feladatok:</h3>
+                    <ol>
+                        <li>Hozz létre egy kartyát, ami 50% széles, középre igazított, árnyékkal és lekerekített sarkokkal rendelkezik!</li>
+                        <li>Készíts egy flexbox konténert, amiben három elem van: balra, középre és jobbra igazítva!</li>
+                        <li>Hozz létre egy képet, ami reszponzív, kerek alakú, és kerettel rendelkezik!</li>
+                        <li>Készíts egy elemet, ami csak mobilon jelenik meg (sm breakpoint alatt), és egy másikat, ami csak asztali eszközökön látható (lg breakpoint felett)!</li>
+                        <li>Hozz létre egy információs blokkot kék háttérrel, fehér szöveggel, megfelelő padding-gel és lekerekített sarkokkal!</li>
+                    </ol>
+                </div>
+
+                <!-- Conclusion -->
+                <h3>Összefoglalás</h3>
+                <p>A Bootstrap segédosztályok rendkívül hasznosak a gyors fejlesztéshez és a konzisztens megjelenés biztosításához. Ezek használatával:</p>
+                <ul>
+                    <li>Gyorsabban fejleszthetsz, mivel kevesebb egyedi CSS-t kell írnod</li>
+                    <li>Konzisztensebb lesz a felületed, mivel előre definiált értékeket használsz</li>
+                    <li>Reszponzívabb és rugalmasabb lesz az oldalad</li>
+                    <li>Könnyebben módosíthatod a megjelenést később</li>
+                </ul>
+                <p>A segédosztályok kombinálásával rendkívül sokféle elrendezést és dizájnt hozhatsz létre anélkül, hogy külön CSS fájlokat kellene írnod.</p>
+            </article>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Bootstrap 5.3 Kurzus. Minden jog fenntartva.</p>
+    </footer>
+</body>
+</html>
